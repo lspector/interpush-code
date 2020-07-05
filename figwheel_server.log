@@ -1,0 +1,1845 @@
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.982 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:12 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 12, col 61] The map literal starting with :type on line 12 column 17 contains 5 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m11[0m  [36m(defn int-text [][0m
+  [33m12[0m  [1m  [:div [:input {:type "text" :value @push-code :on-change }]])[0m
+  [0m  [0m  [33m  /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 12, col 61] The map literal starting with :type on line 12 column 17 contains 5 form(s). Map literals must contain an even number of forms.[0m
+  [36m13[0m  [36m[0m
+  [36m14[0m  [36m;; -------------------------[0m
+  [36m15[0m  [36m;; Views[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.513 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.019 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.663 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.126 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.79 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.445 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.406 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.874 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.337 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.192 seconds.[0m
+[36m----  Could not Analyze  src/interp/core.cljs   line:11  column:1  ----[0m
+
+  [1mWrong number of args (0) passed to: cljs.core/defn--4783[0m
+
+  [36m 9[0m  [36m(def output-stacks (r/atom "Test Output"))[0m
+  [36m10[0m  [36m[0m
+  [33m11[0m  [1m(defn )[0m
+  [0m  [0m  [33m^--- Wrong number of args (0) passed to: cljs.core/defn--4783[0m
+  [36m12[0m  [36m[0m
+  [36m13[0m  [36m(defn interpret-button [][0m
+  [36m14[0m  [36m  [:div [:input {:type "button" :value "Interpret" :on-click #()}]])[0m
+
+[36m----  Analysis Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.273 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 27.965 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.114 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.707 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.585 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.834 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.505 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.344 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.17 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.062 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 1.519 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:52 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 52, col 1] Unexpected EOF while reading item 10 of list, starting at line 21 and column 1.[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.501 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.049 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 1.376 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:21 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 21, col 22] Invalid keyword: :.[0m
+
+  [36m19[0m  [36m(def state (r/atom {:boolean        '()[0m
+  [36m20[0m  [36m                    :char           '()[0m
+  [33m21[0m  [1m                    :}))[0m
+  [0m  [0m  [33m                    /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 21, col 22] Invalid keyword: :.[0m
+  [36m22[0m  [36m[0m
+  [36m23[0m  [36m(def output-stacks (r/atom "Test Output"))[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.229 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.365 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.471 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.683 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.102 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.125 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.227 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.664 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.7 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.424 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/functions.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.605 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/functions.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.602 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.183 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/functions.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 0.212 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:7 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 7, col 30] Unmatched delimiter ].[0m
+
+  [36m 5[0m  [36m      [reagent.dom :as d][0m
+  [36m 6[0m  [36m      [cljs.tools.reader :refer [read-string]][0m
+  [33m 7[0m  [1m      [cljs.js :as cljs-js] ]))[0m
+  [0m  [0m  [33m      /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 7, col 30] Unmatched delimiter ].[0m
+  [36m 8[0m  [36m[0m
+  [36m 9[0m  [36m(defn eval-str [s][0m
+  [36m10[0m  [36m  (cljs-js/eval (cljs-js/empty-state)[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.061 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.493 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.143 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:65  column:10  ----[0m
+
+  [1mUse of undeclared Var interp.core/state[0m
+
+  [36m62[0m  [36m(defn push-to-stack[0m
+  [36m63[0m  [36m  "Pushes item onto stack in state"[0m
+  [36m64[0m  [36m  [stack item][0m
+  [33m65[0m  [1m  (swap! state stack conj item))[0m
+  [0m  [0m  [33m         ^--- Use of undeclared Var interp.core/state[0m
+  [36m66[0m  [36m[0m
+  [36m67[0m  [36m[0m
+  [36m68[0m  [36m(def output-stacks (r/atom "Test Output"))[0m
+  [36m69[0m  [36m[0m
+  [36m70[0m  [36m(defn translate-push-to-state [push][0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.359 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:65  column:10  ----[0m
+
+  [1mUse of undeclared Var interp.core/state[0m
+
+  [36m62[0m  [36m(defn push-to-stack[0m
+  [36m63[0m  [36m  "Pushes items onto stack in state"[0m
+  [36m64[0m  [36m  [ item][0m
+  [33m65[0m  [1m  (swap! state  conj item))[0m
+  [0m  [0m  [33m         ^--- Use of undeclared Var interp.core/state[0m
+  [36m66[0m  [36m[0m
+  [36m67[0m  [36m[0m
+  [36m68[0m  [36m(def output-stacks (r/atom "Test Output"))[0m
+  [36m69[0m  [36m[0m
+  [36m70[0m  [36m(defn translate-push-to-state [push][0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.819 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:65  column:10  ----[0m
+
+  [1mUse of undeclared Var interp.core/state[0m
+
+  [36m62[0m  [36m(defn push-to-stack[0m
+  [36m63[0m  [36m  "Pushes items onto stack in state"[0m
+  [36m64[0m  [36m  [ item][0m
+  [33m65[0m  [1m  (swap! state  conj item))[0m
+  [0m  [0m  [33m         ^--- Use of undeclared Var interp.core/state[0m
+  [36m66[0m  [36m[0m
+  [36m67[0m  [36m[0m
+  [36m68[0m  [36m(def output-stacks (r/atom "Test Output"))[0m
+  [36m69[0m  [36m[0m
+  [36m70[0m  [36m(defn translate-push-to-state [push][0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.294 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.185 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.725 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.994 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.091 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.523 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.46 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.75 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.022 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.619 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.393 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.434 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 1.887 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:109 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 109, col 1] Unexpected EOF while reading item 8 of list, starting at line 84 and column 1.[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.716 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.834 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.732 seconds.[0m
+[36m----  Could not Analyze  src/interp/core.cljs   line:87  column:1  ----[0m
+
+  [1mWrong number of args (0) passed to: cljs.core/defn--4783[0m
+
+  [36m85[0m  [36m  [:div [:p "Exec Stack: " (divvy-stack (:exec stacks))]])[0m
+  [36m86[0m  [36m[0m
+  [33m87[0m  [1m(defn )[0m
+  [0m  [0m  [33m^--- Wrong number of args (0) passed to: cljs.core/defn--4783[0m
+  [36m88[0m  [36m[0m
+  [36m89[0m  [36m(defn output-component [][0m
+  [36m90[0m  [36m  [:div.outputbox[0m
+
+[36m----  Analysis Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.911 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.242 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:100  column:11  ----[0m
+
+  [1mUse of undeclared Var interp.core/isp[0m
+
+  [36m 97[0m  [36m(defn output-component [][0m
+  [36m 98[0m  [36m  [:div.outputbox[0m
+  [36m 99[0m  [36m   [:div (esp @push-state)][0m
+  [33m100[0m  [1m   [:div (isp @push-state)]])[0m
+  [0m   [0m  [33m          ^--- Use of undeclared Var interp.core/isp[0m
+  [36m101[0m  [36m[0m
+  [36m102[0m  [36m[0m
+  [36m103[0m  [36m;; -------------------------[0m
+  [36m104[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.723 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.024 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.269 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.237 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.691 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.28 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:296  column:1  ----[0m
+
+  [1mpush-state at line 80 is being replaced[0m
+
+  [36m292[0m  [36m            (> (:step state) step-limit))[0m
+  [36m293[0m  [36m      state[0m
+  [36m294[0m  [36m      (recur (update (interpret-one-step state) :step inc)))))[0m
+  [36m295[0m  [36m[0m
+  [33m296[0m  [1m(def push-state (r/atom[0m
+  [0m   [0m  [33m^--- push-state at line 80 is being replaced[0m
+  [36m297[0m  [36m  {:exec '()[0m
+  [36m298[0m  [36m   :integer '()[0m
+  [36m299[0m  [36m   :string '()[0m
+  [36m300[0m  [36m   :boolean '()[0m
+  [36m301[0m  [36m   :input {}}))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.25 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.551 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.716 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.929 seconds.[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.285 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/globals.js
+[36m----  Couldn't load Clojure file    ----[0m
+
+  [1mSyntax error macroexpanding at (globals.cljc:3:24).[0m
+
+[36m----  Exception Stack Trace  ----[0m
+
+clojure.lang.ArityException: Wrong number of args (0) passed to: clojure.core/atom
+ at clojure.lang.AFn.throwArity (AFn.java:429)
+    clojure.lang.RestFn.invoke (RestFn.java:399)
+    clojure.lang.AFn.applyToHelper (AFn.java:152)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Compiler$InvokeExpr.eval (Compiler.java:3702)
+    clojure.lang.Compiler$DefExpr.eval (Compiler.java:457)
+    clojure.lang.Compiler.eval (Compiler.java:7182)
+    clojure.lang.Compiler.load (Compiler.java:7636)
+    clojure.lang.Compiler.loadFile (Compiler.java:7574)
+    clojure.lang.RT$3.invoke (RT.java:327)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invokeStatic (clj_reloading.clj:61)
+    figwheel_sidecar.build_middleware.clj_reloading$handle_clj_source_reloading.invoke (clj_reloading.clj:46)
+    figwheel_sidecar.build_middleware.clj_reloading$hook$fn__20262.invoke (clj_reloading.clj:93)
+    figwheel_sidecar.build_middleware.javascript_reloading$hook$fn__20296.invoke (javascript_reloading.clj:48)
+    figwheel_sidecar.components.cljs_autobuild$color_output$fn__20351.invoke (cljs_autobuild.clj:80)
+    figwheel_sidecar.components.cljs_autobuild$execute_build$fn__20393.invoke (cljs_autobuild.clj:234)
+    figwheel_sidecar.utils$sync_exec$fn__362$fn__363.invoke (utils.clj:13)
+    figwheel_sidecar.utils$sync_exec$fn__362.invoke (utils.clj:12)
+    clojure.core$binding_conveyor_fn$fn__5754.invoke (core.clj:2033)
+    clojure.lang.AFn.applyToHelper (AFn.java:154)
+    clojure.lang.RestFn.applyTo (RestFn.java:132)
+    clojure.lang.Agent$Action.doRun (Agent.java:114)
+    clojure.lang.Agent$Action.run (Agent.java:163)
+    java.util.concurrent.ThreadPoolExecutor.runWorker (ThreadPoolExecutor.java:1130)
+    java.util.concurrent.ThreadPoolExecutor$Worker.run (ThreadPoolExecutor.java:630)
+    java.lang.Thread.run (Thread.java:832)
+
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:36  column:14  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m33[0m  [36m(defn translate-push-to-state [push][0m
+  [36m34[0m  [36m  (let [push (read-string push)][0m
+  [36m35[0m  [36m    (doseq [p push][0m
+  [33m36[0m  [1m      (swap! push-state assoc p)[0m
+  [0m  [0m  [33m             ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m37[0m  [36m      )))[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn run-code [][0m
+  [36m40[0m  [36m  (reset! output-stacks (:value (eval-str (str @push-code)))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:36  column:14  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m33[0m  [36m(defn translate-push-to-state [push][0m
+  [36m34[0m  [36m  (let [push (read-string push)][0m
+  [36m35[0m  [36m    (doseq [p push][0m
+  [33m36[0m  [1m      (swap! push-state assoc p)[0m
+  [0m  [0m  [33m             ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m37[0m  [36m      )))[0m
+  [36m38[0m  [36m[0m
+  [36m39[0m  [36m(defn run-code [][0m
+  [36m40[0m  [36m  (reset! output-stacks (:value (eval-str (str @push-code)))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:70  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m68[0m  [36m(defn output-component [][0m
+  [36m69[0m  [36m  [:div.outputbox[0m
+  [33m70[0m  [1m   [:div (esp @push-state)][0m
+  [0m  [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m71[0m  [36m   [:div (isp @push-state)][0m
+  [36m72[0m  [36m   [:div (ssp @push-state)][0m
+  [36m73[0m  [36m   [:div (bsp @push-state)][0m
+  [36m74[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:71  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m68[0m  [36m(defn output-component [][0m
+  [36m69[0m  [36m  [:div.outputbox[0m
+  [36m70[0m  [36m   [:div (esp @push-state)][0m
+  [33m71[0m  [1m   [:div (isp @push-state)][0m
+  [0m  [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m72[0m  [36m   [:div (ssp @push-state)][0m
+  [36m73[0m  [36m   [:div (bsp @push-state)][0m
+  [36m74[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:72  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m68[0m  [36m(defn output-component [][0m
+  [36m69[0m  [36m  [:div.outputbox[0m
+  [36m70[0m  [36m   [:div (esp @push-state)][0m
+  [36m71[0m  [36m   [:div (isp @push-state)][0m
+  [33m72[0m  [1m   [:div (ssp @push-state)][0m
+  [0m  [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m73[0m  [36m   [:div (bsp @push-state)][0m
+  [36m74[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m75[0m  [36m[0m
+  [36m76[0m  [36m[0m
+  [36m77[0m  [36m;; -------------------------[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:73  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m69[0m  [36m  [:div.outputbox[0m
+  [36m70[0m  [36m   [:div (esp @push-state)][0m
+  [36m71[0m  [36m   [:div (isp @push-state)][0m
+  [36m72[0m  [36m   [:div (ssp @push-state)][0m
+  [33m73[0m  [1m   [:div (bsp @push-state)][0m
+  [0m  [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m74[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m75[0m  [36m[0m
+  [36m76[0m  [36m[0m
+  [36m77[0m  [36m;; -------------------------[0m
+  [36m78[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:74  column:17  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m70[0m  [36m   [:div (esp @push-state)][0m
+  [36m71[0m  [36m   [:div (isp @push-state)][0m
+  [36m72[0m  [36m   [:div (ssp @push-state)][0m
+  [36m73[0m  [36m   [:div (bsp @push-state)][0m
+  [33m74[0m  [1m   [:div (insp @push-state)]])[0m
+  [0m  [0m  [33m                ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m75[0m  [36m[0m
+  [36m76[0m  [36m[0m
+  [36m77[0m  [36m;; -------------------------[0m
+  [36m78[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.902 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/globals.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:234  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m230[0m  [36m;; INPUT and OUTPUT Instructions[0m
+  [36m231[0m  [36m;; =============================================================================[0m
+  [36m232[0m  [36m[0m
+  [36m233[0m  [36m;; Pushes the input labeled :in1 on the inputs map onto the :exec stack[0m
+  [33m234[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m235[0m  [36m  :in1[0m
+  [36m236[0m  [36m  (fn [state][0m
+  [36m237[0m  [36m    (push-to-stack state :exec (:in1 (:input state)))))[0m
+  [36m238[0m  [36m[0m
+  [36m239[0m  [36m;; =============================================================================[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:342  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/generate-functions[0m
+
+  [36m338[0m  [36m  [stack state][0m
+  [36m339[0m  [36m  (make-instruction state dec [stack] stack))[0m
+  [36m340[0m  [36m[0m
+  [36m341[0m  [36m;; 2 types x 16 functions = 32 instructions[0m
+  [33m342[0m  [1m(generate-functions[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/generate-functions[0m
+  [36m343[0m  [36m  [:float :integer][0m
+  [36m344[0m  [36m  [_gt _gte _lt _lte _add _subtract _mult _quot _mod _max _min _inc _dec[0m
+  [36m345[0m  [36m   _fromboolean _fromchar _fromstring])[0m
+  [36m346[0m  [36m[0m
+  [36m347[0m  [36m;; =============================================================================[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:352  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m348[0m  [36m;; FLOAT Instructions only[0m
+  [36m349[0m  [36m;; =============================================================================[0m
+  [36m350[0m  [36m[0m
+  [36m351[0m  [36m;; Pushes the cosine of the top FLOAT[0m
+  [33m352[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m353[0m  [36m  :float_cos[0m
+  [36m354[0m  [36m  (fn [state][0m
+  [36m355[0m  [36m    (make-instruction state cos [:float] :float)))[0m
+  [36m356[0m  [36m[0m
+  [36m357[0m  [36m;; Pushes the sine of the top FLOAT[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:358  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m354[0m  [36m  (fn [state][0m
+  [36m355[0m  [36m    (make-instruction state cos [:float] :float)))[0m
+  [36m356[0m  [36m[0m
+  [36m357[0m  [36m;; Pushes the sine of the top FLOAT[0m
+  [33m358[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m359[0m  [36m  :float_sin[0m
+  [36m360[0m  [36m  (fn [state][0m
+  [36m361[0m  [36m    (make-instruction state sin [:float] :float)))[0m
+  [36m362[0m  [36m[0m
+  [36m363[0m  [36m;; Pushes the tangent of the top FLOAT[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:364  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m360[0m  [36m  (fn [state][0m
+  [36m361[0m  [36m    (make-instruction state sin [:float] :float)))[0m
+  [36m362[0m  [36m[0m
+  [36m363[0m  [36m;; Pushes the tangent of the top FLOAT[0m
+  [33m364[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m365[0m  [36m  :float_tan[0m
+  [36m366[0m  [36m  (fn [state][0m
+  [36m367[0m  [36m    (make-instruction state tan [:float] :float)))[0m
+  [36m368[0m  [36m[0m
+  [36m369[0m  [36m;; Pushes the floating point version of the top INTEGER[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:370  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m366[0m  [36m  (fn [state][0m
+  [36m367[0m  [36m    (make-instruction state tan [:float] :float)))[0m
+  [36m368[0m  [36m[0m
+  [36m369[0m  [36m;; Pushes the floating point version of the top INTEGER[0m
+  [33m370[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m371[0m  [36m  :float_frominteger[0m
+  [36m372[0m  [36m  (fn [state][0m
+  [36m373[0m  [36m    (make-instruction state float [:integer] :float)))[0m
+  [36m374[0m  [36m[0m
+  [36m375[0m  [36m;; =============================================================================[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:380  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m376[0m  [36m;; INTEGER Instructions only[0m
+  [36m377[0m  [36m;; =============================================================================[0m
+  [36m378[0m  [36m[0m
+  [36m379[0m  [36m;; Pushes the result of truncating the top FLOAT towards negative infinity[0m
+  [33m380[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m381[0m  [36m  :integer_fromfloat[0m
+  [36m382[0m  [36m  (fn [state][0m
+  [36m383[0m  [36m    (make-instruction state int [:float] :integer)))[0m
+  [36m384[0m  [36m[0m
+  [36m385[0m  [36m;; =============================================================================[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:389  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m385[0m  [36m;; =============================================================================[0m
+  [36m386[0m  [36m;; CODE and EXEC Instructions[0m
+  [36m387[0m  [36m;; =============================================================================[0m
+  [36m388[0m  [36m[0m
+  [33m389[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m390[0m  [36m  :exec_dup[0m
+  [36m391[0m  [36m  (fn [state][0m
+  [36m392[0m  [36m    (if (empty-stack? state :exec)[0m
+  [36m393[0m  [36m      state[0m
+  [36m394[0m  [36m      (push-to-stack state :exec (first (:exec state))))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:396  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m392[0m  [36m    (if (empty-stack? state :exec)[0m
+  [36m393[0m  [36m      state[0m
+  [36m394[0m  [36m      (push-to-stack state :exec (first (:exec state))))))[0m
+  [36m395[0m  [36m[0m
+  [33m396[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m397[0m  [36m  :exec_if[0m
+  [36m398[0m  [36m  (fn [state][0m
+  [36m399[0m  [36m    (make-instruction state #(if %1 %3 %2) [:boolean :exec :exec] :exec)))[0m
+  [36m400[0m  [36m[0m
+  [36m401[0m  [36m;; =============================================================================[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:406  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m402[0m  [36m;; BOOLEAN Instructions[0m
+  [36m403[0m  [36m;; =============================================================================[0m
+  [36m404[0m  [36m[0m
+  [36m405[0m  [36m;; Pushes the logical AND of the top two BOOLEANs[0m
+  [33m406[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m407[0m  [36m  :boolean_and[0m
+  [36m408[0m  [36m  (fn [state][0m
+  [36m409[0m  [36m    (make-instruction state #(and %1 %2) [:boolean :boolean] :boolean)))[0m
+  [36m410[0m  [36m[0m
+  [36m411[0m  [36m;; Pushes the logical OR of the top two BOOLEANs[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:412  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m408[0m  [36m  (fn [state][0m
+  [36m409[0m  [36m    (make-instruction state #(and %1 %2) [:boolean :boolean] :boolean)))[0m
+  [36m410[0m  [36m[0m
+  [36m411[0m  [36m;; Pushes the logical OR of the top two BOOLEANs[0m
+  [33m412[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m413[0m  [36m  :boolean_or[0m
+  [36m414[0m  [36m  (fn [state][0m
+  [36m415[0m  [36m    (make-instruction state #(or %1 %2) [:boolean :boolean] :boolean)))[0m
+  [36m416[0m  [36m[0m
+  [36m417[0m  [36m;; Pushes the logical NOT of the top BOOLEAN[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:418  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m414[0m  [36m  (fn [state][0m
+  [36m415[0m  [36m    (make-instruction state #(or %1 %2) [:boolean :boolean] :boolean)))[0m
+  [36m416[0m  [36m[0m
+  [36m417[0m  [36m;; Pushes the logical NOT of the top BOOLEAN[0m
+  [33m418[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m419[0m  [36m  :boolean_not[0m
+  [36m420[0m  [36m  (fn [state][0m
+  [36m421[0m  [36m    (make-instruction state not [:boolean] :boolean)))[0m
+  [36m422[0m  [36m[0m
+  [36m423[0m  [36m;; Pushes the logical XOR of the top two BOOLEAN[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:424  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m420[0m  [36m  (fn [state][0m
+  [36m421[0m  [36m    (make-instruction state not [:boolean] :boolean)))[0m
+  [36m422[0m  [36m[0m
+  [36m423[0m  [36m;; Pushes the logical XOR of the top two BOOLEAN[0m
+  [33m424[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m425[0m  [36m  :boolean_xor[0m
+  [36m426[0m  [36m  (fn [state][0m
+  [36m427[0m  [36m    (make-instruction state #(or (and %1 (not %2))[0m
+  [36m428[0m  [36m                                 (and (not %1) %2))[0m
+  [36m429[0m  [36m                      [:boolean :boolean][0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:434  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m430[0m  [36m                      :boolean)))[0m
+  [36m431[0m  [36m[0m
+  [36m432[0m  [36m;; Pushes the logical AND of the top two BOOLEANs, after applying NOT to the[0m
+  [36m433[0m  [36m;; first one[0m
+  [33m434[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m435[0m  [36m  :boolean_invert_first_then_and[0m
+  [36m436[0m  [36m  (fn [state][0m
+  [36m437[0m  [36m    (make-instruction state #(and %1 (not %2)) [:boolean :boolean] :boolean)))[0m
+  [36m438[0m  [36m[0m
+  [36m439[0m  [36m;; Pushes the logical AND of the top two BOOLEANs, after applying NOT to the[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:441  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m437[0m  [36m    (make-instruction state #(and %1 (not %2)) [:boolean :boolean] :boolean)))[0m
+  [36m438[0m  [36m[0m
+  [36m439[0m  [36m;; Pushes the logical AND of the top two BOOLEANs, after applying NOT to the[0m
+  [36m440[0m  [36m;; second one[0m
+  [33m441[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m442[0m  [36m  :boolean_invert_second_then_and[0m
+  [36m443[0m  [36m  (fn [state][0m
+  [36m444[0m  [36m    (make-instruction state #(and (not %1) %2) [:boolean :boolean] :boolean)))[0m
+  [36m445[0m  [36m[0m
+  [36m446[0m  [36m;; Pushes FALSE if the top FLOAT is 0.0, and TRUE otherwise[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:447  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m443[0m  [36m  (fn [state][0m
+  [36m444[0m  [36m    (make-instruction state #(and (not %1) %2) [:boolean :boolean] :boolean)))[0m
+  [36m445[0m  [36m[0m
+  [36m446[0m  [36m;; Pushes FALSE if the top FLOAT is 0.0, and TRUE otherwise[0m
+  [33m447[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m448[0m  [36m  :boolean_fromfloat[0m
+  [36m449[0m  [36m  (fn [state][0m
+  [36m450[0m  [36m    (make-instruction state #(not (zero? %)) [:float] :boolean)))[0m
+  [36m451[0m  [36m[0m
+  [36m452[0m  [36m;; Pushes FALSE if the top INTEGER is 0, and TRUE otherwise[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:453  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m449[0m  [36m  (fn [state][0m
+  [36m450[0m  [36m    (make-instruction state #(not (zero? %)) [:float] :boolean)))[0m
+  [36m451[0m  [36m[0m
+  [36m452[0m  [36m;; Pushes FALSE if the top INTEGER is 0, and TRUE otherwise[0m
+  [33m453[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m454[0m  [36m  :boolean_frominteger[0m
+  [36m455[0m  [36m  (fn [state][0m
+  [36m456[0m  [36m    (make-instruction state #(not (zero? %)) [:integer] :boolean)))[0m
+  [36m457[0m  [36m[0m
+  [36m458[0m  [36m;; =============================================================================[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:485  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m481[0m  [36m;; Pops the FLOAT stack, converts the top item to a whole number, and pushes[0m
+  [36m482[0m  [36m;; its corresponding ASCII value onto the CHAR stack. Whole numbers larger than[0m
+  [36m483[0m  [36m;; 128 will be reduced modulo 128. For instance, 248.45 will result in x being[0m
+  [36m484[0m  [36m;; pushed.[0m
+  [33m485[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m486[0m  [36m  :char_fromfloat[0m
+  [36m487[0m  [36m  (fn [state][0m
+  [36m488[0m  [36m    (make-instruction state #(char (mod (long %) 128)) [:float] :char)))[0m
+  [36m489[0m  [36m[0m
+  [36m490[0m  [36m;; Pops the INTEGER stack and pushes the top element's corresponding ASCII[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:493  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m490[0m  [36m;; Pops the INTEGER stack and pushes the top element's corresponding ASCII[0m
+  [36m491[0m  [36m;; value onto the CHAR stack. Integers larger than 128 will be reduced modulo[0m
+  [36m492[0m  [36m;; 128. For instance, 248 will result in x being pushed[0m
+  [33m493[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m494[0m  [36m  :char_frominteger[0m
+  [36m495[0m  [36m  (fn [state][0m
+  [36m496[0m  [36m    (make-instruction state #(char (mod % 128)) [:integer] :char)))[0m
+  [36m497[0m  [36m[0m
+  [36m498[0m  [36m;; Pops the STRING stack and pushes the top element's constituent characters[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:501  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m498[0m  [36m;; Pops the STRING stack and pushes the top element's constituent characters[0m
+  [36m499[0m  [36m;; onto the CHAR stack, in order. For instance, "hello" will result in the[0m
+  [36m500[0m  [36m;; top of the CHAR stack being o l l e h[0m
+  [33m501[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m502[0m  [36m  :char_allfromstring[0m
+  [36m503[0m  [36m  (fn [state][0m
+  [36m504[0m  [36m    (make-instruction state #(map char %) [:string] :char)))[0m
+  [36m505[0m  [36m[0m
+  [36m506[0m  [36m;; =============================================================================[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:510  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m506[0m  [36m;; =============================================================================[0m
+  [36m507[0m  [36m;; STRING Instructions[0m
+  [36m508[0m  [36m;; =============================================================================[0m
+  [36m509[0m  [36m[0m
+  [33m510[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m511[0m  [36m  :string_=[0m
+  [36m512[0m  [36m  (fn [state][0m
+  [36m513[0m  [36m    (make-instruction state = [:string :string] :boolean)))[0m
+  [36m514[0m  [36m[0m
+  [36m515[0m  [36m(def-instruction[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:515  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m511[0m  [36m  :string_=[0m
+  [36m512[0m  [36m  (fn [state][0m
+  [36m513[0m  [36m    (make-instruction state = [:string :string] :boolean)))[0m
+  [36m514[0m  [36m[0m
+  [33m515[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m516[0m  [36m  :string_concat[0m
+  [36m517[0m  [36m  (fn [state][0m
+  [36m518[0m  [36m    (make-instruction state #(apply str (concat %1 %2)) [:string :string] :string)))[0m
+  [36m519[0m  [36m[0m
+  [36m520[0m  [36m(def-instruction[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:520  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m516[0m  [36m  :string_concat[0m
+  [36m517[0m  [36m  (fn [state][0m
+  [36m518[0m  [36m    (make-instruction state #(apply str (concat %1 %2)) [:string :string] :string)))[0m
+  [36m519[0m  [36m[0m
+  [33m520[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m521[0m  [36m  :string_drop[0m
+  [36m522[0m  [36m  (fn [state][0m
+  [36m523[0m  [36m    (make-instruction state #(apply str (drop %1 %2)) [:integer :string] :string)))[0m
+  [36m524[0m  [36m[0m
+  [36m525[0m  [36m(def-instruction[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:525  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m521[0m  [36m  :string_drop[0m
+  [36m522[0m  [36m  (fn [state][0m
+  [36m523[0m  [36m    (make-instruction state #(apply str (drop %1 %2)) [:integer :string] :string)))[0m
+  [36m524[0m  [36m[0m
+  [33m525[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m526[0m  [36m  :string_includes?[0m
+  [36m527[0m  [36m  (fn [state][0m
+  [36m528[0m  [36m    (make-instruction state clojure.string/includes? [:string :string] :boolean)))[0m
+  [36m529[0m  [36m[0m
+  [36m530[0m  [36m(def-instruction[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:530  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m526[0m  [36m  :string_includes?[0m
+  [36m527[0m  [36m  (fn [state][0m
+  [36m528[0m  [36m    (make-instruction state clojure.string/includes? [:string :string] :boolean)))[0m
+  [36m529[0m  [36m[0m
+  [33m530[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m531[0m  [36m  :string_length[0m
+  [36m532[0m  [36m  (fn [state][0m
+  [36m533[0m  [36m    (make-instruction state count [:string] :integer)))[0m
+  [36m534[0m  [36m[0m
+  [36m535[0m  [36m(def-instruction[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:535  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m531[0m  [36m  :string_length[0m
+  [36m532[0m  [36m  (fn [state][0m
+  [36m533[0m  [36m    (make-instruction state count [:string] :integer)))[0m
+  [36m534[0m  [36m[0m
+  [33m535[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m536[0m  [36m  :string_reverse[0m
+  [36m537[0m  [36m  (fn [state][0m
+  [36m538[0m  [36m    (make-instruction state #(apply str (reverse %)) [:string] :string)))[0m
+  [36m539[0m  [36m[0m
+  [36m540[0m  [36m(def-instruction[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:540  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/def-instruction[0m
+
+  [36m536[0m  [36m  :string_reverse[0m
+  [36m537[0m  [36m  (fn [state][0m
+  [36m538[0m  [36m    (make-instruction state #(apply str (reverse %)) [:string] :string)))[0m
+  [36m539[0m  [36m[0m
+  [33m540[0m  [1m(def-instruction[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/def-instruction[0m
+  [36m541[0m  [36m  :string_take[0m
+  [36m542[0m  [36m  (fn [state][0m
+  [36m543[0m  [36m    (make-instruction state #(apply str (take %1 %2)) [:integer :string] :string)))[0m
+  [36m544[0m  [36m[0m
+  [36m545[0m  [36m;; =============================================================================[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:638  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/generate-functions[0m
+
+  [36m634[0m  [36m  [stack state][0m
+  [36m635[0m  [36m  ())[0m
+  [36m636[0m  [36m[0m
+  [36m637[0m  [36m;; 5 types x 1 function = 5 instructions[0m
+  [33m638[0m  [1m(generate-functions [:boolean :char :float :integer :string] [_eq])[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/generate-functions[0m
+  [36m639[0m  [36m[0m
+  [36m640[0m  [36m;; 8 types x 12 function = 96 instructions[0m
+  [36m641[0m  [36m(generate-functions[0m
+  [36m642[0m  [36m  [:boolean :char :code :exec :float :integer :string][0m
+  [36m643[0m  [36m  [_dup _duptimes _dupitems _empty _flush _pop _rot _shove _stackdepth[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:641  column:2  ----[0m
+
+  [1mUse of undeclared Var interp.core/generate-functions[0m
+
+  [36m637[0m  [36m;; 5 types x 1 function = 5 instructions[0m
+  [36m638[0m  [36m(generate-functions [:boolean :char :float :integer :string] [_eq])[0m
+  [36m639[0m  [36m[0m
+  [36m640[0m  [36m;; 8 types x 12 function = 96 instructions[0m
+  [33m641[0m  [1m(generate-functions[0m
+  [0m   [0m  [33m ^--- Use of undeclared Var interp.core/generate-functions[0m
+  [36m642[0m  [36m  [:boolean :char :code :exec :float :integer :string][0m
+  [36m643[0m  [36m  [_dup _duptimes _dupitems _empty _flush _pop _rot _shove _stackdepth[0m
+  [36m644[0m  [36m   _swap _yank _yankdup])[0m
+  [36m645[0m  [36m[0m
+  [36m646[0m  [36m;;;;;;;;;[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:655  column:53  ----[0m
+
+  [1mNo such namespace: globals, could not locate globals.cljs, globals.cljc, or JavaScript source providing "globals"[0m
+
+  [36m651[0m  [36m[state][0m
+  [36m652[0m  [36m(let [popped-state (pop-stack state :exec)[0m
+  [36m653[0m  [36m      first-instruction-raw (first (:exec state))[0m
+  [36m654[0m  [36m      first-instruction (if (keyword? first-instruction-raw)[0m
+  [33m655[0m  [1m                          (first-instruction-raw @globals/instruction-table)[0m
+  [0m   [0m  [33m                                                  ^--- No such namespace: globals, could not locate globals.cljs, globals.cljc, or JavaScript source providing "globals"[0m
+  [36m656[0m  [36m                          first-instruction-raw)][0m
+  [36m657[0m  [36m  (println (type first-instruction) first-instruction)[0m
+  [36m658[0m  [36m  (cond[0m
+  [36m659[0m  [36m    (fn? first-instruction)[0m
+  [36m660[0m  [36m    (first-instruction popped-state)[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:655  column:53  ----[0m
+
+  [1mUse of undeclared Var globals/instruction-table[0m
+
+  [36m651[0m  [36m[state][0m
+  [36m652[0m  [36m(let [popped-state (pop-stack state :exec)[0m
+  [36m653[0m  [36m      first-instruction-raw (first (:exec state))[0m
+  [36m654[0m  [36m      first-instruction (if (keyword? first-instruction-raw)[0m
+  [33m655[0m  [1m                          (first-instruction-raw @globals/instruction-table)[0m
+  [0m   [0m  [33m                                                  ^--- Use of undeclared Var globals/instruction-table[0m
+  [36m656[0m  [36m                          first-instruction-raw)][0m
+  [36m657[0m  [36m  (println (type first-instruction) first-instruction)[0m
+  [36m658[0m  [36m  (cond[0m
+  [36m659[0m  [36m    (fn? first-instruction)[0m
+  [36m660[0m  [36m    (first-instruction popped-state)[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:699  column:14  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m696[0m  [36m(defn translate-push-to-state [push][0m
+  [36m697[0m  [36m  (let [push (read-string push)][0m
+  [36m698[0m  [36m    (doseq [p push][0m
+  [33m699[0m  [1m      (swap! push-state assoc p)[0m
+  [0m   [0m  [33m             ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m700[0m  [36m      )))[0m
+  [36m701[0m  [36m[0m
+  [36m702[0m  [36m(defn run-code [][0m
+  [36m703[0m  [36m  (reset! output-stacks (:value (eval-str (str @push-code)))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:699  column:14  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m696[0m  [36m(defn translate-push-to-state [push][0m
+  [36m697[0m  [36m  (let [push (read-string push)][0m
+  [36m698[0m  [36m    (doseq [p push][0m
+  [33m699[0m  [1m      (swap! push-state assoc p)[0m
+  [0m   [0m  [33m             ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m700[0m  [36m      )))[0m
+  [36m701[0m  [36m[0m
+  [36m702[0m  [36m(defn run-code [][0m
+  [36m703[0m  [36m  (reset! output-stacks (:value (eval-str (str @push-code)))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:733  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m731[0m  [36m(defn output-component [][0m
+  [36m732[0m  [36m  [:div.outputbox[0m
+  [33m733[0m  [1m   [:div (esp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m734[0m  [36m   [:div (isp @push-state)][0m
+  [36m735[0m  [36m   [:div (ssp @push-state)][0m
+  [36m736[0m  [36m   [:div (bsp @push-state)][0m
+  [36m737[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:734  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m731[0m  [36m(defn output-component [][0m
+  [36m732[0m  [36m  [:div.outputbox[0m
+  [36m733[0m  [36m   [:div (esp @push-state)][0m
+  [33m734[0m  [1m   [:div (isp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m735[0m  [36m   [:div (ssp @push-state)][0m
+  [36m736[0m  [36m   [:div (bsp @push-state)][0m
+  [36m737[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:735  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m731[0m  [36m(defn output-component [][0m
+  [36m732[0m  [36m  [:div.outputbox[0m
+  [36m733[0m  [36m   [:div (esp @push-state)][0m
+  [36m734[0m  [36m   [:div (isp @push-state)][0m
+  [33m735[0m  [1m   [:div (ssp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m736[0m  [36m   [:div (bsp @push-state)][0m
+  [36m737[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m738[0m  [36m[0m
+  [36m739[0m  [36m[0m
+  [36m740[0m  [36m;; -------------------------[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:736  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m732[0m  [36m  [:div.outputbox[0m
+  [36m733[0m  [36m   [:div (esp @push-state)][0m
+  [36m734[0m  [36m   [:div (isp @push-state)][0m
+  [36m735[0m  [36m   [:div (ssp @push-state)][0m
+  [33m736[0m  [1m   [:div (bsp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m737[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m738[0m  [36m[0m
+  [36m739[0m  [36m[0m
+  [36m740[0m  [36m;; -------------------------[0m
+  [36m741[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:737  column:17  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m733[0m  [36m   [:div (esp @push-state)][0m
+  [36m734[0m  [36m   [:div (isp @push-state)][0m
+  [36m735[0m  [36m   [:div (ssp @push-state)][0m
+  [36m736[0m  [36m   [:div (bsp @push-state)][0m
+  [33m737[0m  [1m   [:div (insp @push-state)]])[0m
+  [0m   [0m  [33m                ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m738[0m  [36m[0m
+  [36m739[0m  [36m[0m
+  [36m740[0m  [36m;; -------------------------[0m
+  [36m741[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.41 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:701  column:14  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m698[0m  [36m(defn translate-push-to-state [push][0m
+  [36m699[0m  [36m  (let [push (read-string push)][0m
+  [36m700[0m  [36m    (doseq [p push][0m
+  [33m701[0m  [1m      (swap! push-state assoc p)[0m
+  [0m   [0m  [33m             ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m702[0m  [36m      )))[0m
+  [36m703[0m  [36m[0m
+  [36m704[0m  [36m(defn run-code [][0m
+  [36m705[0m  [36m  (reset! output-stacks (:value (eval-str (str @push-code)))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:701  column:14  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m698[0m  [36m(defn translate-push-to-state [push][0m
+  [36m699[0m  [36m  (let [push (read-string push)][0m
+  [36m700[0m  [36m    (doseq [p push][0m
+  [33m701[0m  [1m      (swap! push-state assoc p)[0m
+  [0m   [0m  [33m             ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m702[0m  [36m      )))[0m
+  [36m703[0m  [36m[0m
+  [36m704[0m  [36m(defn run-code [][0m
+  [36m705[0m  [36m  (reset! output-stacks (:value (eval-str (str @push-code)))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:735  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m733[0m  [36m(defn output-component [][0m
+  [36m734[0m  [36m  [:div.outputbox[0m
+  [33m735[0m  [1m   [:div (esp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m736[0m  [36m   [:div (isp @push-state)][0m
+  [36m737[0m  [36m   [:div (ssp @push-state)][0m
+  [36m738[0m  [36m   [:div (bsp @push-state)][0m
+  [36m739[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:736  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m733[0m  [36m(defn output-component [][0m
+  [36m734[0m  [36m  [:div.outputbox[0m
+  [36m735[0m  [36m   [:div (esp @push-state)][0m
+  [33m736[0m  [1m   [:div (isp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m737[0m  [36m   [:div (ssp @push-state)][0m
+  [36m738[0m  [36m   [:div (bsp @push-state)][0m
+  [36m739[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:737  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m733[0m  [36m(defn output-component [][0m
+  [36m734[0m  [36m  [:div.outputbox[0m
+  [36m735[0m  [36m   [:div (esp @push-state)][0m
+  [36m736[0m  [36m   [:div (isp @push-state)][0m
+  [33m737[0m  [1m   [:div (ssp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m738[0m  [36m   [:div (bsp @push-state)][0m
+  [36m739[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m740[0m  [36m[0m
+  [36m741[0m  [36m[0m
+  [36m742[0m  [36m;; -------------------------[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:738  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m734[0m  [36m  [:div.outputbox[0m
+  [36m735[0m  [36m   [:div (esp @push-state)][0m
+  [36m736[0m  [36m   [:div (isp @push-state)][0m
+  [36m737[0m  [36m   [:div (ssp @push-state)][0m
+  [33m738[0m  [1m   [:div (bsp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m739[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m740[0m  [36m[0m
+  [36m741[0m  [36m[0m
+  [36m742[0m  [36m;; -------------------------[0m
+  [36m743[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:739  column:17  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m735[0m  [36m   [:div (esp @push-state)][0m
+  [36m736[0m  [36m   [:div (isp @push-state)][0m
+  [36m737[0m  [36m   [:div (ssp @push-state)][0m
+  [36m738[0m  [36m   [:div (bsp @push-state)][0m
+  [33m739[0m  [1m   [:div (insp @push-state)]])[0m
+  [0m   [0m  [33m                ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m740[0m  [36m[0m
+  [36m741[0m  [36m[0m
+  [36m742[0m  [36m;; -------------------------[0m
+  [36m743[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.415 seconds.[0m
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 1.16 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:267 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 267, col 54] Unmatched delimiter ).[0m
+
+  [36m265[0m  [36m(defn- _lte[0m
+  [36m266[0m  [36m  [stack state[0m
+  [33m267[0m  [1m  (make-instruction state <= [stack stack] :boolean))[0m
+  [0m   [0m  [33m  /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 267, col 54] Unmatched delimiter ).[0m
+  [36m268[0m  [36m[0m
+  [36m269[0m  [36m;; Pushes the sum of the top two items onto the same stack[0m
+  [36m270[0m  [36m(defn- _add[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:701  column:14  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m698[0m  [36m(defn translate-push-to-state [push][0m
+  [36m699[0m  [36m  (let [push (read-string push)][0m
+  [36m700[0m  [36m    (doseq [p push][0m
+  [33m701[0m  [1m      (swap! push-state assoc p)[0m
+  [0m   [0m  [33m             ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m702[0m  [36m      )))[0m
+  [36m703[0m  [36m[0m
+  [36m704[0m  [36m(defn run-code [][0m
+  [36m705[0m  [36m  (reset! output-stacks (:value (eval-str (str @push-code)))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:701  column:14  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m698[0m  [36m(defn translate-push-to-state [push][0m
+  [36m699[0m  [36m  (let [push (read-string push)][0m
+  [36m700[0m  [36m    (doseq [p push][0m
+  [33m701[0m  [1m      (swap! push-state assoc p)[0m
+  [0m   [0m  [33m             ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m702[0m  [36m      )))[0m
+  [36m703[0m  [36m[0m
+  [36m704[0m  [36m(defn run-code [][0m
+  [36m705[0m  [36m  (reset! output-stacks (:value (eval-str (str @push-code)))))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:735  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m733[0m  [36m(defn output-component [][0m
+  [36m734[0m  [36m  [:div.outputbox[0m
+  [33m735[0m  [1m   [:div (esp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m736[0m  [36m   [:div (isp @push-state)][0m
+  [36m737[0m  [36m   [:div (ssp @push-state)][0m
+  [36m738[0m  [36m   [:div (bsp @push-state)][0m
+  [36m739[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:736  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m733[0m  [36m(defn output-component [][0m
+  [36m734[0m  [36m  [:div.outputbox[0m
+  [36m735[0m  [36m   [:div (esp @push-state)][0m
+  [33m736[0m  [1m   [:div (isp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m737[0m  [36m   [:div (ssp @push-state)][0m
+  [36m738[0m  [36m   [:div (bsp @push-state)][0m
+  [36m739[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:737  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m733[0m  [36m(defn output-component [][0m
+  [36m734[0m  [36m  [:div.outputbox[0m
+  [36m735[0m  [36m   [:div (esp @push-state)][0m
+  [36m736[0m  [36m   [:div (isp @push-state)][0m
+  [33m737[0m  [1m   [:div (ssp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m738[0m  [36m   [:div (bsp @push-state)][0m
+  [36m739[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m740[0m  [36m[0m
+  [36m741[0m  [36m[0m
+  [36m742[0m  [36m;; -------------------------[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:738  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m734[0m  [36m  [:div.outputbox[0m
+  [36m735[0m  [36m   [:div (esp @push-state)][0m
+  [36m736[0m  [36m   [:div (isp @push-state)][0m
+  [36m737[0m  [36m   [:div (ssp @push-state)][0m
+  [33m738[0m  [1m   [:div (bsp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m739[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m740[0m  [36m[0m
+  [36m741[0m  [36m[0m
+  [36m742[0m  [36m;; -------------------------[0m
+  [36m743[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:739  column:17  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m735[0m  [36m   [:div (esp @push-state)][0m
+  [36m736[0m  [36m   [:div (isp @push-state)][0m
+  [36m737[0m  [36m   [:div (ssp @push-state)][0m
+  [36m738[0m  [36m   [:div (bsp @push-state)][0m
+  [33m739[0m  [1m   [:div (insp @push-state)]])[0m
+  [0m   [0m  [33m                ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m740[0m  [36m[0m
+  [36m741[0m  [36m[0m
+  [36m742[0m  [36m;; -------------------------[0m
+  [36m743[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.034 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:729  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m727[0m  [36m(defn output-component [][0m
+  [36m728[0m  [36m  [:div.outputbox[0m
+  [33m729[0m  [1m   [:div (esp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m730[0m  [36m   [:div (isp @push-state)][0m
+  [36m731[0m  [36m   [:div (ssp @push-state)][0m
+  [36m732[0m  [36m   [:div (bsp @push-state)][0m
+  [36m733[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:730  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m727[0m  [36m(defn output-component [][0m
+  [36m728[0m  [36m  [:div.outputbox[0m
+  [36m729[0m  [36m   [:div (esp @push-state)][0m
+  [33m730[0m  [1m   [:div (isp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m731[0m  [36m   [:div (ssp @push-state)][0m
+  [36m732[0m  [36m   [:div (bsp @push-state)][0m
+  [36m733[0m  [36m   [:div (insp @push-state)]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:731  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m727[0m  [36m(defn output-component [][0m
+  [36m728[0m  [36m  [:div.outputbox[0m
+  [36m729[0m  [36m   [:div (esp @push-state)][0m
+  [36m730[0m  [36m   [:div (isp @push-state)][0m
+  [33m731[0m  [1m   [:div (ssp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m732[0m  [36m   [:div (bsp @push-state)][0m
+  [36m733[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m734[0m  [36m[0m
+  [36m735[0m  [36m[0m
+  [36m736[0m  [36m;; -------------------------[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:732  column:16  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m728[0m  [36m  [:div.outputbox[0m
+  [36m729[0m  [36m   [:div (esp @push-state)][0m
+  [36m730[0m  [36m   [:div (isp @push-state)][0m
+  [36m731[0m  [36m   [:div (ssp @push-state)][0m
+  [33m732[0m  [1m   [:div (bsp @push-state)][0m
+  [0m   [0m  [33m               ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m733[0m  [36m   [:div (insp @push-state)]])[0m
+  [36m734[0m  [36m[0m
+  [36m735[0m  [36m[0m
+  [36m736[0m  [36m;; -------------------------[0m
+  [36m737[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[36m----  Compiler Warning on   src/interp/core.cljs   line:733  column:17  ----[0m
+
+  [1mUse of undeclared Var interp.core/push-state[0m
+
+  [36m729[0m  [36m   [:div (esp @push-state)][0m
+  [36m730[0m  [36m   [:div (isp @push-state)][0m
+  [36m731[0m  [36m   [:div (ssp @push-state)][0m
+  [36m732[0m  [36m   [:div (bsp @push-state)][0m
+  [33m733[0m  [1m   [:div (insp @push-state)]])[0m
+  [0m   [0m  [33m                ^--- Use of undeclared Var interp.core/push-state[0m
+  [36m734[0m  [36m[0m
+  [36m735[0m  [36m[0m
+  [36m736[0m  [36m;; -------------------------[0m
+  [36m737[0m  [36m;; Views[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.844 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.575 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.86 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.13 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.945 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.616 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.334 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.969 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.496 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.429 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.516 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:707 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 707, col 1] Unexpected EOF while reading item 20 of list, starting at line 606 and column 1.[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.684 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.768 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.231 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.831 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.126 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.242 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.975 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.951 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.163 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.743 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.298 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.564 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:709 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 709, col 24] Unmatched delimiter ).[0m
+
+  [36m707[0m  [36m   [load-button][0m
+  [36m708[0m  [36m   [interpret-button][0m
+  [33m709[0m  [1m   [output-component]])[0m
+  [0m   [0m  [33m   /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 709, col 24] Unmatched delimiter ).[0m
+  [36m710[0m  [36m[0m
+  [36m711[0m  [36m;; -------------------------[0m
+  [36m712[0m  [36m;; Initialize app[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.936 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.446 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.905 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.455 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.376 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.233 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.284 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.675 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.613 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.898 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.699 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.539 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.107 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.163 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.574 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.68 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.065 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.213 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.427 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.578 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.271 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.61 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.293 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.984 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.504 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.787 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.289 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.744 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 7.589 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.237 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.944 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.047 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.094 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 14.231 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.447 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.234 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.863 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.41 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.269 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.25 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.387 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.523 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.007 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.818 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.967 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:637 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 637, col 15] Unmatched delimiter ).[0m
+
+  [36m636[0m  [36m(defn interpret-push [step-limit][0m
+  [33m637[0m  [1m  (let [sl (@)])[0m
+  [0m   [0m  [33m  /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 637, col 15] Unmatched delimiter ).[0m
+  [36m638[0m  [36m  )[0m
+  [36m639[0m  [36m[0m
+  [36m640[0m  [36m(defn interpret-program[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.416 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.288 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:17  column:15  ----[0m
+
+  [1mUse of undeclared Var reagent.core/atome[0m
+
+  [36m13[0m  [36m(def current-step (r/atom 0))[0m
+  [36m14[0m  [36m[0m
+  [36m15[0m  [36m(def push-code (r/atom "(:exec_dup 3 4 :integer_add :integer_gt)"))[0m
+  [36m16[0m  [36m[0m
+  [33m17[0m  [1m(def anFrame (r/atome ))[0m
+  [0m  [0m  [33m              ^--- Use of undeclared Var reagent.core/atome[0m
+  [36m18[0m  [36m[0m
+  [36m19[0m  [36m(defn abs[0m
+  [36m20[0m  [36m  "Returns the absolute value of a number."[0m
+  [36m21[0m  [36m  [x][0m
+  [36m22[0m  [36m  (if (neg? x) (- x) x))[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.315 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.163 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.57 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 4.792 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:739 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 739, col 1] Unexpected EOF while reading item 21 of list, starting at line 639 and column 1.[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.691 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.262 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.886 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 5.464 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.722 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.957 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:709  column:47  ----[0m
+
+  [1mWrong number of args (1) passed to cljs.core/reset![0m
+
+  [36m705[0m  [36m(defn home-page [][0m
+  [36m706[0m  [36m  [:div.grid-container [:div.main "Push Interpreter"[0m
+  [36m707[0m  [36m                        [:div (str "Current Step: " @current-step)[0m
+  [36m708[0m  [36m                         [:input {:type "number" :value @step-limit[0m
+  [33m709[0m  [1m                                  :on-change #(reset! step-limit )}]][0m
+  [0m   [0m  [33m                                              ^--- Wrong number of args (1) passed to cljs.core/reset![0m
+  [36m710[0m  [36m                        [int-text][0m
+  [36m711[0m  [36m                        [load-button][0m
+  [36m712[0m  [36m                        [interpret-one-step-button][0m
+  [36m713[0m  [36m                        [interpret-button][0m
+  [36m714[0m  [36m                        [output-component]][0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.97 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.212 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.083 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.682 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js

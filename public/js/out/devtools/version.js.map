@@ -1,0 +1,1 @@
+{"version":3,"file":"\/Users\/sungkwak\/Desktop\/prop-dev\/interp\/public\/js\/out\/devtools\/version.js","sources":["version.cljs?rel=1593791099009"],"lineCount":9,"mappings":";AAAA;;AAGA,AAAKA,mCAAgB;AAErB,uCAAA,vCAAMC;AAAN,AACED","names":["devtools.version\/current-version","devtools.version\/get-current-version"]}
