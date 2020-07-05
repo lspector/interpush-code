@@ -55,3 +55,20 @@ a:hover {
     border-style: inset;
     overflow-y: scroll;
 }
+
+textarea {
+    font-family:  'Helvetica';
+    font-size: 14px;
+}
+
+.scrollvert {
+    overflow-y:scroll;
+    overflow-x:none;
+}
+
+.error {
+    color:red;
+}
+
+.app {
+}

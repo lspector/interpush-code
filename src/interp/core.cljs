@@ -15,6 +15,8 @@
 
 (def current-step (r/atom 0))
 
+(def error-output (r/atom ""))
+
 (def test-push-code (r/atom "(:exec_dupitems 1 :boolean_shove  2 :boolean_xor \"three\"
 :integer_gte \"four\" :integer_mod \"five\" :string_concat true false
 :boolean_rot 1 :integer_lte 3 :integer_add \"seven\" :integer_shove \"hello\"
@@ -581,9 +583,10 @@
   [state]
   (let [popped-state (pop-stack state :exec)
         first-instruction-raw (first (:exec state))
-        first-instruction (if (keyword? first-instruction-raw)
-                            (first-instruction-raw @globals/instruction-table)
-                            first-instruction-raw)]
+        first-instruction (cond
+                            (nil? first-instruction-raw) nil
+                            (keyword? first-instruction-raw) (first-instruction-raw @globals/instruction-table)
+                            :else first-instruction-raw)]
     (println (type first-instruction) first-instruction)
     (cond
       (fn? first-instruction)
@@ -606,8 +609,9 @@
       ;
       :else
       ; (throw (Exception.
-      (throw (js/Error. (str "Unrecognized Push instruction in program: "
-                             (name first-instruction-raw))))))
+      (do (reset! error-output (str "Unrecognized Push instruction in program: "
+                                first-instruction-raw))
+          (reset! current-step 1000000))))
   (swap! current-step inc))
 
 
@@ -628,6 +632,7 @@
 
 (defn load-state [push-code]
   (reset! current-step 0)
+  (reset! error-output "")
   (let [stacks {:exec    (list push-code)
                 :integer '()
                 :string  '()
@@ -645,7 +650,7 @@
   [:div [:input {:type "button" :value "Interpret" :on-click #(interpret-push)}]])
 
 (defn int-text []
-  [:div [:input.textbox {:type "text" :value @push-code :on-change #(reset! push-code (-> % .-target .-value))}]])
+  [:div [:textarea.textbox {:value @push-code :on-change #(reset! push-code (-> % .-target .-value))}]])
 
 (defn divvy-stack [stack]
   (for [items stack]
@@ -679,17 +684,19 @@
 ;; Views
 
 (defn home-page []
-  [:div.grid-container [:div.main "Push Interpreter"
-                        [int-text]
-                        [:div (str "Current Step: " @current-step ". Step-limit: ")
-                         [:input {:type      "number" :value @step-limit
-                                  :on-change #(reset! step-limit (-> % .-target .-value))}]]
-                        [load-button]
-                        [interpret-one-step-button]
-                        [interpret-button]
-                        [output-component]]
+  [:div.app [:div.main "Push Interpreter"
+             [int-text]
+             [:div  "Current Step: " (if (< 100000 (int @current-step)) [:span.error "Error"] @current-step) ". Step-limit: "
+              [:input {:type      "number" :value @step-limit
+                       :on-change #(reset! step-limit (-> % .-target .-value))}]]
+             [load-button]
+             [interpret-one-step-button]
+             [interpret-button]
+             [:p.error (str @error-output)]
+             [output-component]]
    [:div.instruction-list [:p "Instruction List:"]
     [:div.instructions (str (keys @globals/instruction-table))]]]
+
   )
 
 ;; -------------------------
