@@ -1,1 +1,0 @@
-{"version":3,"file":"\/Users\/sungkwak\/Desktop\/prop-dev\/interp\/public\/js\/out\/interp\/globals.js","sources":["globals.cljc?rel=1593798857224"],"lineCount":6,"mappings":";AAAA;;AAEA,AAAKA,mCAAkB,yBAAA,zBAACC","names":["interp.globals\/instruction-table","cljs.core\/atom"]}

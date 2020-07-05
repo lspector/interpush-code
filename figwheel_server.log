@@ -1843,3 +1843,92 @@ notifying browser that file changed:  public/js/out/interp/core.js
 Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
 [32mSuccessfully compiled build :app to "public/js/app.js" in 1.682 seconds.[0m
 notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 9.785 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 9.44 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.783 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.381 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.754 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 5.034 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.703 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.593 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:732  column:12  ----[0m
+
+  [1mUse of undeclared Var interp.core/keyds[0m
+
+  [36m728[0m  [36m     | :integer_inc | :integer_dec | :boolean_and | :boolean_or | :boolean_not | :boolean_xor |[0m
+  [36m729[0m  [36m      :boolean_invert_first_then_and | :boolean_frominteger | :string_= | :string_concat | :string_drop | :string_includes? |[0m
+  [36m730[0m  [36m      :string_length | :string_reverse | :string_take | :[any]_dup | :[any]_duptimes | :[any]_dupitems | :[any]_empty |[0m
+  [36m731[0m  [36m      :[any]_flush | :[any]_pop | :[any]_rot | :[any]_shove | :[any]_anydepth | :[any]_swap | :[any]_yank | :[any]_yankdup "][0m
+  [33m732[0m  [1m    [:div (keyds)]]][0m
+  [0m   [0m  [33m           ^--- Use of undeclared Var interp.core/keyds[0m
+  [36m733[0m  [36m  )[0m
+  [36m734[0m  [36m[0m
+  [36m735[0m  [36m;; -------------------------[0m
+  [36m736[0m  [36m;; Initialize app[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.305 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.909 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.781 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.075 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.622 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.914 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.496 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.104 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.179 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.258 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.86 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.612 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.516 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js

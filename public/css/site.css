@@ -51,4 +51,7 @@ a:hover {
 }
 .instructions {
     font-size: 12px;
+    height: 120px;
+    border-style: inset;
+    overflow-y: scroll;
 }
