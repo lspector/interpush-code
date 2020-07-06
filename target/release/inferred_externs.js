@@ -4,6 +4,7 @@ Window.prototype.requestAnimationFrame;
 Window.prototype.webkitRequestAnimationFrame;
 Window.prototype.mozRequestAnimationFrame;
 Window.prototype.msRequestAnimationFrame;
+Window.prototype.cancelAnimationFrame;
 Object.defaultValue;
 Object.onChange;
 Object.Fragment;

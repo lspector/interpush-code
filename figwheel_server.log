@@ -2140,3 +2140,303 @@ Notifying browser that CSS file changed: public/css/site.css
 Notifying browser that CSS file changed: public/css/site.css
 Notifying browser that CSS file changed: public/css/site.css
 Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:650  column:76  ----[0m
+
+  [1mWrong number of args (0) passed to cljs.core/empty?[0m
+
+  [36m646[0m  [36m  [:div [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string @push-code))}]][0m
+  [36m647[0m  [36m  )[0m
+  [36m648[0m  [36m[0m
+  [36m649[0m  [36m(defn interpret-one-step-button [][0m
+  [33m650[0m  [1m  [:div [:input {:type "button" :value "Interpret One Step" :on-click #(if (empty? )interpret-one-step @push-state)}]])[0m
+  [0m   [0m  [33m                                                                           ^--- Wrong number of args (0) passed to cljs.core/empty?[0m
+  [36m651[0m  [36m[0m
+  [36m652[0m  [36m(defn interpret-button [][0m
+  [36m653[0m  [36m  [:div [:input {:type "button" :value "Interpret" :on-click #(interpret-push)}]])[0m
+  [36m654[0m  [36m[0m
+  [36m655[0m  [36m(defn int-text [][0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 11.447 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.306 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.749 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.131 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.967 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 1.766 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:639 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 639, col 20] Unmatched delimiter ].[0m
+
+  [36m637[0m  [36m(let [push-code[0m
+  [36m638[0m  [36m      (if (and (= (count push-code) 1) (list? (first push-code))[0m
+  [33m639[0m  [1m               )][0m
+  [0m   [0m  [33m               /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 639, col 20] Unmatched delimiter ].[0m
+  [36m640[0m  [36m(reset! current-step 0)[0m
+  [36m641[0m  [36m(reset! error-output "")[0m
+  [36m642[0m  [36m(let [stacks {:exec    (list push-code)[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 1.485 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 5.417 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.795 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:639  column:39  ----[0m
+
+  [1mWrong number of args (0) passed to :Error[0m
+
+  [36m636[0m  [36m(defn load-state [push-code][0m
+  [36m637[0m  [36m  (let [push-code[0m
+  [36m638[0m  [36m        (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)[0m
+  [33m639[0m  [1m              (not (list? push-code)) (:Error)[0m
+  [0m   [0m  [33m                                      ^--- Wrong number of args (0) passed to :Error[0m
+  [36m640[0m  [36m              :else push-code)][0m
+  [36m641[0m  [36m  (reset! current-step 0)[0m
+  [36m642[0m  [36m  (reset! error-output "")[0m
+  [36m643[0m  [36m  (let [stacks {:exec    (list push-code)[0m
+  [36m644[0m  [36m                :integer '()[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.154 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.43 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.183 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.977 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.25 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.76 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.764 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.721 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.524 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.814 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.846 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.601 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.367 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.914 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.909 seconds.[0m
+[36m----  Could not Analyze  src/interp/core.cljs   line:631  column:3  ----[0m
+
+  [1mUnknown dot form of (. nil nil nil) with classification [:cljs.analyzer/error :cljs.analyzer/error ()][0m
+
+  [36m630[0m  [36m(defn stop-interpret [][0m
+  [33m631[0m  [1m  (.)[0m
+  [0m   [0m  [33m  ^--- Unknown dot form of (. nil nil nil) with classification [:cljs.analyzer/error :cljs.analyzer/error ()][0m
+  [36m632[0m  [36m  )[0m
+  [36m633[0m  [36m[0m
+  [36m634[0m  [36m(def output-stacks (r/atom "Test Output"))[0m
+
+[36m----  Analysis Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.933 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.331 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.752 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.933 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.013 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.458 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.78 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.065 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.959 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.362 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.551 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.433 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.813 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.527 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.215 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.904 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.114 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css
+Notifying browser that CSS file changed: public/css/site.css

@@ -1,0 +1,1 @@
+([binaryage/devtools "1.0.0" :scope "test"] [cider/piggieback "0.5.0" :scope "test"] [clojure-complete/clojure-complete "0.2.5" :exclusions ([org.clojure/clojure])] [figwheel-sidecar/figwheel-sidecar "0.5.20" :scope "test"] [nrepl/nrepl "0.7.0" :scope "test"] [org.clojure/clojure "1.10.1"] [org.clojure/clojurescript "1.10.764"] [reagent/reagent "0.10.0"])

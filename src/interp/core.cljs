@@ -31,7 +31,7 @@
 :boolean_yank :integer_eq :boolean_or 12 :integer_dupitems :string_shove :integer_fromstring :string_= :exec_rot :string_reverse
 :exec_dup )"))
 
-(def push-code (r/atom "(:exec_dup (1 2 :integer_add) (:integer_yank 5 6) :integer_gte :exec_if (5 6) :integer_add)"))
+(def push-code (r/atom "(:exec_dup (1 2 :integer_add) \"hello\" (:integer_yank 5 6) :integer_gte :exec_if (5 6) false :integer_add)"))
 
 (def anFrame (r/atom {}))
 
@@ -589,6 +589,9 @@
                             :else first-instruction-raw)]
     (println (type first-instruction) first-instruction)
     (cond
+      (empty? (:exec state))
+      (swap! current-step dec)
+      ;
       (fn? first-instruction)
       (reset! push-state (first-instruction popped-state))
       ;
@@ -624,30 +627,38 @@
       (do (interpret-one-step @push-state)
           (reset! anFrame (.requestAnimationFrame js/window interpret-push))))))
 
-
+(defn stop-interpret []
+  (.cancelAnimationFrame js/window @anFrame)
+  )
 
 (def output-stacks (r/atom "Test Output"))
 
 
 
 (defn load-state [push-code]
+  (let [push-code
+        (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
+              :else push-code)]
   (reset! current-step 0)
   (reset! error-output "")
   (let [stacks {:exec    (list push-code)
                 :integer '()
                 :string  '()
                 :boolean '()}]
-    (reset! push-state stacks)))
+    (reset! push-state stacks))))
 
 (defn load-button []
-  [:div [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string @push-code))}]]
+  [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string (str "(" @push-code ")))))))" )))}]]
   )
 
 (defn interpret-one-step-button []
-  [:div [:input {:type "button" :value "Interpret One Step" :on-click #(interpret-one-step @push-state)}]])
+  [:span.button-spacing [:input {:type "button" :value "Interpret One Step" :on-click #(interpret-one-step @push-state)}]])
 
 (defn interpret-button []
-  [:div [:input {:type "button" :value "Interpret" :on-click #(interpret-push)}]])
+  [:span.button-spacing [:input {:type "button" :value "Interpret" :on-click #(interpret-push)}]])
+
+(defn stop-button []
+  [:span [:input {:type "button" :value "Pause" :on-click #(stop-interpret)}]])
 
 (defn int-text []
   [:div [:textarea.textbox {:value @push-code :on-change #(reset! push-code (-> % .-target .-value))}]])
@@ -684,14 +695,15 @@
 ;; Views
 
 (defn home-page []
-  [:div.app [:div.main "Push Interpreter"
+  [:div.app [:div.main [:div.title "Push Interpreter"]
              [int-text]
-             [:div  "Current Step: " (if (< 100000 (int @current-step)) [:span.error "Error"] @current-step) ". Step-limit: "
+             [:div.bottom-spacing  "Current Step: " (if (< 100000 (int @current-step)) [:span.error "Error"] @current-step) ". Step-limit: "
               [:input {:type      "number" :value @step-limit
                        :on-change #(reset! step-limit (-> % .-target .-value))}]]
              [load-button]
              [interpret-one-step-button]
              [interpret-button]
+             [stop-button]
              [:p.error (str @error-output)]
              [output-component]]
    [:div.instruction-list [:p "Instruction List:"]
