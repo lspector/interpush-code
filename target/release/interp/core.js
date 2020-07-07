@@ -11,6 +11,9 @@ goog.require('interp.utils');
 goog.require('interp.state');
 interp.core.step_limit = reagent.core.atom.cljs$core$IFn$_invoke$arity$1((100));
 interp.core.current_step = reagent.core.atom.cljs$core$IFn$_invoke$arity$1((0));
+interp.core.error_exists = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(false);
+interp.core.cache = reagent.core.atom.cljs$core$IFn$_invoke$arity$1(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$exec,cljs.core.List.EMPTY,cljs.core.cst$kw$integer,cljs.core.List.EMPTY,cljs.core.cst$kw$string,cljs.core.List.EMPTY,cljs.core.cst$kw$boolean,cljs.core.List.EMPTY], null)], null));
+interp.core.blank_state = new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$exec,cljs.core.List.EMPTY,cljs.core.cst$kw$integer,cljs.core.List.EMPTY,cljs.core.cst$kw$string,cljs.core.List.EMPTY,cljs.core.cst$kw$boolean,cljs.core.List.EMPTY], null);
 interp.core.error_output = reagent.core.atom.cljs$core$IFn$_invoke$arity$1("");
 interp.core.test_push_code = reagent.core.atom.cljs$core$IFn$_invoke$arity$1("(:exec_dupitems 1 :boolean_shove  2 :boolean_xor \"three\"\n:integer_gte \"four\" :integer_mod \"five\" :string_concat true false\n:boolean_rot 1 :integer_lte 3 :integer_add \"seven\" :integer_shove \"hello\"\n:string_drop true :integer_rot :boolean_dupitems :string_dupitems :integer_max :string_eq\n:integer_stackdepth :boolean_dup true true :string_take :exec_eq :string_swap :integer_yank \"hello\"\n:integer_fromchar :string_stackdepth :integer_min \"1\" :exec_swap \"hello\" :string_pop :integer_quot :exec_if\n:boolean_invert_first_then_and :boolean_eq :integer_fromboolean :boolean_frominteger :integer_gt :boolean_not\n:integer_duptimes :exec_pop :string_yankdup :boolean_duptimes :string_yank :integer_lt :integer_subtract :string_rot\n:integer_swap :integer_dup :string_includes? :string_duptimes :exec_yank :integer_pop :integer_empty :integer_dec\n:exec_stackdepth :boolean_and :string_length :boolean_invert_second_then_and :string_dup :boolean_yankdup :integer_inc\n:boolean_stackdepth :boolean_pop :integer_mult :exec_yankdup :integer_yankdup :boolean_swap :exec_shove :exec_duptimes\n:boolean_yank :integer_eq :boolean_or 12 :integer_dupitems :string_shove :integer_fromstring :string_= :exec_rot :string_reverse\n:exec_dup )");
 interp.core.push_code = reagent.core.atom.cljs$core$IFn$_invoke$arity$1("(:exec_dup (1 2 :integer_add) \"hello\" (:integer_yank 5 6) :integer_gte :exec_if (5 6) false :integer_add)");
@@ -759,6 +762,9 @@ return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(p1__21522__21523__auto__,clj
 cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$4(interp.globals.instruction_table,cljs.core.assoc,cljs.core.cst$kw$string_yankdup,cljs.core.with_meta(cljs.core.partial.cljs$core$IFn$_invoke$arity$2(interp.core._yankdup,cljs.core.cst$kw$string),cljs.core.update_in.cljs$core$IFn$_invoke$arity$3(cljs.core.meta(interp.core._yankdup),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$stacks], null),(function (p1__21522__21523__auto__){
 return cljs.core.conj.cljs$core$IFn$_invoke$arity$2(p1__21522__21523__auto__,cljs.core.cst$kw$string);
 }))));
+interp.core.input_error = (function interp$core$input_error(){
+return cljs.core.reset_BANG_(interp.core.error_exists,true);
+});
 /**
  * Takes a Push state and executes the next instruction on the exec stack.
  */
@@ -794,7 +800,7 @@ cljs.core.reset_BANG_(interp.core.push_state,interp.core.push_to_stack(popped_st
 } else {
 cljs.core.reset_BANG_(interp.core.error_output,["Unrecognized Push instruction in program: ",cljs.core.str.cljs$core$IFn$_invoke$arity$1(first_instruction_raw_34193)].join(''));
 
-cljs.core.reset_BANG_(interp.core.current_step,(1000000));
+interp.core.input_error();
 
 }
 }
@@ -804,12 +810,18 @@ cljs.core.reset_BANG_(interp.core.current_step,(1000000));
 }
 }
 
-return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(interp.core.current_step,cljs.core.inc);
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(interp.core.current_step,cljs.core.inc);
+
+if((cljs.core.count(cljs.core.deref(interp.core.cache)) < (cljs.core.deref(interp.core.current_step) | (0)))){
+return cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$3(interp.core.cache,cljs.core.conj,cljs.core.deref(interp.core.push_state));
+} else {
+return null;
+}
 });
 interp.core.interpret_push = (function interp$core$interpret_push(){
 var sl = (cljs.core.deref(interp.core.step_limit) | (0));
 var state = cljs.core.deref(interp.core.push_state);
-if((((sl <= (cljs.core.deref(interp.core.current_step) | (0)))) || (cljs.core.empty_QMARK_(cljs.core.cst$kw$exec.cljs$core$IFn$_invoke$arity$1(state))))){
+if((((sl <= (cljs.core.deref(interp.core.current_step) | (0)))) || (cljs.core.empty_QMARK_(cljs.core.cst$kw$exec.cljs$core$IFn$_invoke$arity$1(state))) || (cljs.core.deref(interp.core.error_exists) === true))){
 return cljs.core.List.EMPTY;
 } else {
 interp.core.interpret_one_step(cljs.core.deref(interp.core.push_state));
@@ -826,10 +838,32 @@ var push_code__$1 = ((((cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2(cljs.core.c
 );
 cljs.core.reset_BANG_(interp.core.current_step,(0));
 
+cljs.core.reset_BANG_(interp.core.error_exists,false);
+
 cljs.core.reset_BANG_(interp.core.error_output,"");
 
 var stacks = new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$exec,(new cljs.core.List(null,push_code__$1,null,(1),null)),cljs.core.cst$kw$integer,cljs.core.List.EMPTY,cljs.core.cst$kw$string,cljs.core.List.EMPTY,cljs.core.cst$kw$boolean,cljs.core.List.EMPTY], null);
-return cljs.core.reset_BANG_(interp.core.push_state,stacks);
+cljs.core.reset_BANG_(interp.core.push_state,stacks);
+
+return cljs.core.reset_BANG_(interp.core.cache,cljs.core.vec(cljs.core.PersistentHashMap.fromArrays([],[])));
+});
+interp.core.step_back = (function interp$core$step_back(){
+if(((1) > cljs.core.deref(interp.core.current_step))){
+return cljs.core.List.EMPTY;
+} else {
+if(cljs.core._EQ_.cljs$core$IFn$_invoke$arity$2((1),cljs.core.deref(interp.core.current_step))){
+return interp.core.load_state(cljs.tools.reader.read_string.cljs$core$IFn$_invoke$arity$1(["(",cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(interp.core.push_code)),")))))))"].join('')));
+} else {
+cljs.core.reset_BANG_(interp.core.error_exists,false);
+
+cljs.core.reset_BANG_(interp.core.error_output,"");
+
+cljs.core.swap_BANG_.cljs$core$IFn$_invoke$arity$2(interp.core.current_step,cljs.core.dec);
+
+return cljs.core.reset_BANG_(interp.core.push_state,cljs.core.nth.cljs$core$IFn$_invoke$arity$2(cljs.core.deref(interp.core.cache),((cljs.core.deref(interp.core.current_step) | (0)) - (1))));
+
+}
+}
 });
 interp.core.load_button = (function interp$core$load_button(){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span$left_DASH_spacing$button_DASH_spacing,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$type,"button",cljs.core.cst$kw$value,"Load Push Code",cljs.core.cst$kw$on_DASH_click,(function (){
@@ -844,6 +878,11 @@ return interp.core.interpret_one_step(cljs.core.deref(interp.core.push_state));
 interp.core.interpret_button = (function interp$core$interpret_button(){
 return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span$button_DASH_spacing,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$type,"button",cljs.core.cst$kw$value,"Interpret",cljs.core.cst$kw$on_DASH_click,(function (){
 return interp.core.interpret_push();
+})], null)], null)], null);
+});
+interp.core.step_back_button = (function interp$core$step_back_button(){
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span$button_DASH_spacing,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$type,"button",cljs.core.cst$kw$value,"Previous Step",cljs.core.cst$kw$on_DASH_click,(function (){
+return interp.core.step_back();
 })], null)], null)], null);
 });
 interp.core.stop_button = (function interp$core$stop_button(){
@@ -900,28 +939,32 @@ break;
 });
 return iter__4529__auto__(stack);
 });
+interp.core.drop_outers = (function interp$core$drop_outers(s){
+
+return cljs.core.drop.cljs$core$IFn$_invoke$arity$2((1),cljs.core.drop_last.cljs$core$IFn$_invoke$arity$1(s));
+});
 interp.core.esp = (function interp$core$esp(stacks){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Exec Stack: ",interp.core.divvy_stack(cljs.core.cst$kw$exec.cljs$core$IFn$_invoke$arity$1(stacks))], null)], null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Exec Stack: ",interp.core.drop_outers(cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$exec.cljs$core$IFn$_invoke$arity$1(stacks)))], null)], null);
 });
 interp.core.isp = (function interp$core$isp(stacks){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Integer Stack: ",interp.core.divvy_stack(cljs.core.cst$kw$integer.cljs$core$IFn$_invoke$arity$1(stacks))], null)], null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Integer Stack: ",interp.core.drop_outers(cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$integer.cljs$core$IFn$_invoke$arity$1(stacks)))], null)], null);
 });
 interp.core.ssp = (function interp$core$ssp(stacks){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"String Stack: ",interp.core.divvy_stack(cljs.core.cst$kw$string.cljs$core$IFn$_invoke$arity$1(stacks))], null)], null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"String Stack: ",interp.core.drop_outers(cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$string.cljs$core$IFn$_invoke$arity$1(stacks)))], null)], null);
 });
 interp.core.bsp = (function interp$core$bsp(stacks){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Boolean Stack: ",interp.core.divvy_stack(cljs.core.cst$kw$boolean.cljs$core$IFn$_invoke$arity$1(stacks))], null)], null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Boolean Stack: ",interp.core.drop_outers(cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$boolean.cljs$core$IFn$_invoke$arity$1(stacks)))], null)], null);
 });
 interp.core.insp = (function interp$core$insp(stacks){
-return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Input Stack: ",interp.core.divvy_stack(cljs.core.cst$kw$input.cljs$core$IFn$_invoke$arity$1(stacks))], null)], null);
+return new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Input Stack: ",interp.core.drop_outers(cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.cst$kw$input.cljs$core$IFn$_invoke$arity$1(stacks)))], null)], null);
 });
 interp.core.output_component = (function interp$core$output_component(){
 return new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$outputbox,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,interp.core.esp(cljs.core.deref(interp.core.push_state))], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,interp.core.isp(cljs.core.deref(interp.core.push_state))], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,interp.core.ssp(cljs.core.deref(interp.core.push_state))], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div,interp.core.bsp(cljs.core.deref(interp.core.push_state))], null)], null);
 });
 interp.core.home_page = (function interp$core$home_page(){
-return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$app,new cljs.core.PersistentVector(null, 10, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$main,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$title,"Push Interpreter"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.int_text], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$bottom_DASH_spacing,"Current Step: ",((((100000) < (cljs.core.deref(interp.core.current_step) | (0))))?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span$error,"Error"], null):cljs.core.deref(interp.core.current_step)),". Step-limit: ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 3, [cljs.core.cst$kw$type,"number",cljs.core.cst$kw$value,cljs.core.deref(interp.core.step_limit),cljs.core.cst$kw$on_DASH_change,(function (p1__34201_SHARP_){
+return new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$app,new cljs.core.PersistentVector(null, 11, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$main,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$title,"Push Interpreter"], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.int_text], null),new cljs.core.PersistentVector(null, 5, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$bottom_DASH_spacing,"Current Step: ",((cljs.core.deref(interp.core.error_exists) === true)?new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$span$error,"Error"], null):cljs.core.deref(interp.core.current_step)),". Step-limit: ",new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$input,new cljs.core.PersistentArrayMap(null, 4, [cljs.core.cst$kw$type,"number",cljs.core.cst$kw$value,cljs.core.deref(interp.core.step_limit),cljs.core.cst$kw$max,(100000),cljs.core.cst$kw$on_DASH_change,(function (p1__34201_SHARP_){
 return cljs.core.reset_BANG_(interp.core.step_limit,p1__34201_SHARP_.target.value);
-})], null)], null)], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.load_button], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.interpret_one_step_button], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.interpret_button], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.stop_button], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p$error,cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(interp.core.error_output))], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.output_component], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$instruction_DASH_list,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Instruction List:"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$instructions,cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.keys(cljs.core.deref(interp.globals.instruction_table)))], null)], null)], null);
+})], null)], null)], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.load_button], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.interpret_one_step_button], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.step_back_button], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.interpret_button], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.stop_button], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p$error,cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.deref(interp.core.error_output))], null),new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.output_component], null)], null),new cljs.core.PersistentVector(null, 3, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$instruction_DASH_list,new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$p,"Instruction List:"], null),new cljs.core.PersistentVector(null, 2, 5, cljs.core.PersistentVector.EMPTY_NODE, [cljs.core.cst$kw$div$instructions,cljs.core.str.cljs$core$IFn$_invoke$arity$1(cljs.core.keys(cljs.core.deref(interp.globals.instruction_table)))], null)], null)], null);
 });
 interp.core.mount_root = (function interp$core$mount_root(){
 return reagent.dom.render.cljs$core$IFn$_invoke$arity$2(new cljs.core.PersistentVector(null, 1, 5, cljs.core.PersistentVector.EMPTY_NODE, [interp.core.home_page], null),document.getElementById("app"));

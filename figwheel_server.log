@@ -2440,3 +2440,394 @@ Notifying browser that CSS file changed: public/css/site.css
 Notifying browser that CSS file changed: public/css/site.css
 Notifying browser that CSS file changed: public/css/site.css
 Notifying browser that CSS file changed: public/css/site.css
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 6.988 seconds.[0m
+notifying browser that file changed:  public/js/out/goog/deps.js
+notifying browser that file changed:  public/js/out/cljs_deps.js
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.136 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.444 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.884 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.96 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:679 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 679, col 58] Unmatched delimiter ].[0m
+
+  [36m678[0m  [36m(defn esp [stacks][0m
+  [33m679[0m  [1m  [:div [:p "Exec Stack: " (join "" (str (:exec stacks))]])[0m
+  [0m   [0m  [33m  /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 679, col 58] Unmatched delimiter ].[0m
+  [36m680[0m  [36m[0m
+  [36m681[0m  [36m(defn isp [stacks][0m
+  [36m682[0m  [36m  [:div [:p "Integer Stack: " (str (:integer stacks))]])[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.983 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:679 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 679, col 60] Unmatched delimiter ].[0m
+
+  [36m678[0m  [36m(defn esp [stacks][0m
+  [33m679[0m  [1m  [:div [:p "Exec Stack: " (drop-last (str (:exec stacks)))]])[0m
+  [0m   [0m  [33m  /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 679, col 60] Unmatched delimiter ].[0m
+  [36m680[0m  [36m[0m
+  [36m681[0m  [36m(defn isp [stacks][0m
+  [36m682[0m  [36m  [:div [:p "Integer Stack: " (str (:integer stacks))]])[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.192 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.441 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.197 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.253 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.636 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.152 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.512 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.147 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.534 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.342 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:736 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 736, col 1] Unexpected EOF while reading item 24 of list, starting at line 629 and column 1.[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.565 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.537 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.943 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.804 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.344 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.632 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:633  column:3  ----[0m
+
+  [1mWrong number of args (1) passed to cljs.core/swap![0m
+
+  [36m629[0m  [36m      (do (reset! error-output (str "Unrecognized Push instruction in program: "[0m
+  [36m630[0m  [36m                                    first-instruction-raw))[0m
+  [36m631[0m  [36m          (input-error))))[0m
+  [36m632[0m  [36m  (swap! current-step inc)[0m
+  [33m633[0m  [1m  (swap! cache ))[0m
+  [0m   [0m  [33m  ^--- Wrong number of args (1) passed to cljs.core/swap![0m
+  [36m634[0m  [36m[0m
+  [36m635[0m  [36m[0m
+  [36m636[0m  [36m[0m
+  [36m637[0m  [36m(defn interpret-push [][0m
+  [36m638[0m  [36m  (let [sl (int @step-limit)[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.361 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.907 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.628 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.069 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:680  column:70  ----[0m
+
+  [1mUse of undeclared Var interp.core/step-back[0m
+
+  [36m676[0m  [36m(defn step-back-button [][0m
+  [36m677[0m  [36m  [:span [:input {:type "button" :value "Pause" :on-click #(stop-interpret)}]])[0m
+  [36m678[0m  [36m[0m
+  [36m679[0m  [36m(defn stop-button [][0m
+  [33m680[0m  [1m  [:span [:input {:type "button" :value "Previous State" :on-click #(step-back)}]])[0m
+  [0m   [0m  [33m                                                                     ^--- Use of undeclared Var interp.core/step-back[0m
+  [36m681[0m  [36m[0m
+  [36m682[0m  [36m(defn int-text [][0m
+  [36m683[0m  [36m  [:div [:textarea.textbox {:value @push-code :on-change #(reset! push-code (-> % .-target .-value))}]])[0m
+  [36m684[0m  [36m[0m
+  [36m685[0m  [36m(defn divvy-stack [stack][0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.293 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.562 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.953 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.479 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.952 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.947 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.336 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.012 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.65 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.312 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.181 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 3.448 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.312 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.354 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:752 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 752, col 1] Unexpected EOF while reading item 21 of list, starting at line 666 and column 1.[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.686 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.79 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.179 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.364 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.879 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:733  column:17  ----[0m
+
+  [1mUse of undeclared Var interp.core/step-back-button[0m
+
+  [36m729[0m  [36m           [:input {:type      "number" :value @step-limit[0m
+  [36m730[0m  [36m                    :on-change #(reset! step-limit (-> % .-target .-value))}]][0m
+  [36m731[0m  [36m          [load-button][0m
+  [36m732[0m  [36m          [interpret-one-step-button][0m
+  [33m733[0m  [1m          [step-back-button][0m
+  [0m   [0m  [33m           ^--- Use of undeclared Var interp.core/step-back-button[0m
+  [36m734[0m  [36m          [interpret-button][0m
+  [36m735[0m  [36m          [stop-button][0m
+  [36m736[0m  [36m          [:p.error (str @error-output)][0m
+  [36m737[0m  [36m          [output-component]][0m
+  [36m738[0m  [36m[:div.instruction-list [:p "Instruction List:"][0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.828 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.555 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.272 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.756 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.481 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.197 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.915 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.543 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.851 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.296 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.173 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.441 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.262 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.368 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.489 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 1.458 seconds.[0m
+[36m----  Could not Read  src/interp/core.cljs   line:665 ----[0m
+
+  [1m/Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 665, col 39] The map literal starting with (clojure.core/deref push-state) on line 665 column 26 contains 1 form(s). Map literals must contain an even number of forms.[0m
+
+  [36m663[0m  [36m                  :boolean '()}][0m
+  [36m664[0m  [36m      (reset! push-state stacks)[0m
+  [33m665[0m  [1m      (reset! cache (vec {@push-state})))))[0m
+  [0m   [0m  [33m      /Users/sungkwak/Desktop/prop-dev/interp/src/interp/core.cljs [line 665, col 39] The map literal starting with (clojure.core/deref push-state) on line 665 column 26 contains 1 form(s). Map literals must contain an even number of forms.[0m
+  [36m666[0m  [36m[0m
+  [36m667[0m  [36m(defn step-back [][0m
+  [36m668[0m  [36m  (cond (> 1 @current-step) ()[0m
+
+[36m----  Reader Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.655 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.339 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.262 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.051 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.843 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.007 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[31mFailed to compile build :app from ["src" "env/dev/cljs"] in 2.327 seconds.[0m
+[36m----  Could not Compile  src/interp/core.cljs  ----[0m
+
+  [1mfailed compiling file:src/interp/core.cljs[0m
+
+[36m----  Compiler Error : Please see src/interp/core.cljs  ----[0m
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.385 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.191 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[36m----  Compiler Warning on   src/interp/core.cljs   line:671  column:17  ----[0m
+
+  [1mWrong number of args (1) passed to cljs.core/reset![0m
+
+  [36m667[0m  [36m  (cond (> 1 @current-step) ()[0m
+  [36m668[0m  [36m        (= 1 @current-step) (load-state (read-string @push-code))[0m
+  [36m669[0m  [36m        :else (do[0m
+  [36m670[0m  [36m                (reset! error-exists false)[0m
+  [33m671[0m  [1m                (reset! error-output "")[0m
+  [0m   [0m  [33m                ^--- Wrong number of args (1) passed to cljs.core/reset![0m
+  [36m672[0m  [36m                (swap! current-step dec)[0m
+  [36m673[0m  [36m                (reset! push-state (nth @cache (- (int @current-step) 1))))))[0m
+  [36m674[0m  [36m[0m
+  [36m675[0m  [36m(defn load-button [][0m
+  [36m676[0m  [36m  [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string (str "(" @push-code ")))))))")))}]])[0m
+
+[36m----  Compiler Warning : Please see src/interp/core.cljs  ----[0m
+[32mSuccessfully compiled build :app to "public/js/app.js" in 3.89 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.326 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 1.773 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.818 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.922 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.817 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.505 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.53 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.941 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.881 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.772 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 4.041 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.411 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.949 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js
+Compiling build :app to "public/js/app.js" from ["src" "env/dev/cljs"]...
+[32mSuccessfully compiled build :app to "public/js/app.js" in 2.091 seconds.[0m
+notifying browser that file changed:  public/js/out/interp/core.js

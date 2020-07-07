@@ -15,6 +15,19 @@
 
 (def current-step (r/atom 0))
 
+(def error-exists (r/atom false))
+
+(def cache (r/atom [{:exec    '()
+                     :integer '()
+                     :string  '()
+                     :boolean '()}]))
+
+(def blank-state
+  {:exec    '()
+   :integer '()
+   :string  '()
+   :boolean '()})
+
 (def error-output (r/atom ""))
 
 (def test-push-code (r/atom "(:exec_dupitems 1 :boolean_shove  2 :boolean_xor \"three\"
@@ -573,7 +586,8 @@
   [_dup _duptimes _dupitems _empty _eq _flush _pop _rot _shove
    _stackdepth _swap _yank _yankdup])
 
-
+(defn input-error []
+  (reset! error-exists true))
 
 ;;;;;;;;;
 ;; Interpreter
@@ -613,23 +627,23 @@
       :else
       ; (throw (Exception.
       (do (reset! error-output (str "Unrecognized Push instruction in program: "
-                                first-instruction-raw))
-          (reset! current-step 1000000))))
-  (swap! current-step inc))
+                                    first-instruction-raw))
+          (input-error))))
+  (swap! current-step inc)
+  (if (< (count @cache) (int @current-step)) (swap! cache conj @push-state)))
 
 
 
 (defn interpret-push []
   (let [sl (int @step-limit)
         state @push-state]
-    (if (or (<= sl (int @current-step)) (empty? (:exec state)))
+    (if (or (<= sl (int @current-step)) (empty? (:exec state)) (true? @error-exists))
       ()
       (do (interpret-one-step @push-state)
           (reset! anFrame (.requestAnimationFrame js/window interpret-push))))))
 
 (defn stop-interpret []
-  (.cancelAnimationFrame js/window @anFrame)
-  )
+  (.cancelAnimationFrame js/window @anFrame))
 
 (def output-stacks (r/atom "Test Output"))
 
@@ -639,23 +653,36 @@
   (let [push-code
         (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
               :else push-code)]
-  (reset! current-step 0)
-  (reset! error-output "")
-  (let [stacks {:exec    (list push-code)
-                :integer '()
-                :string  '()
-                :boolean '()}]
-    (reset! push-state stacks))))
+    (reset! current-step 0)
+    (reset! error-exists false)
+    (reset! error-output "")
+    (let [stacks {:exec    (list push-code)
+                  :integer '()
+                  :string  '()
+                  :boolean '()}]
+      (reset! push-state stacks)
+      (reset! cache (vec (hash-map @push-state))))))
+
+(defn step-back []
+  (cond (> 1 @current-step) ()
+        (= 1 @current-step) (load-state (read-string (str "(" @push-code ")))))))")))
+        :else (do
+                (reset! error-exists false)
+                (reset! error-output "")
+                (swap! current-step dec)
+                (reset! push-state (nth @cache (- (int @current-step) 1))))))
 
 (defn load-button []
-  [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string (str "(" @push-code ")))))))" )))}]]
-  )
+  [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string (str "(" @push-code ")))))))")))}]])
 
 (defn interpret-one-step-button []
-  [:span.button-spacing [:input {:type "button" :value "Interpret One Step" :on-click #(interpret-one-step @push-state)}]])
+  [:span.button-spacing [:input {:type "button" :value  "Interpret One Step" :on-click #(interpret-one-step @push-state)}]])
 
 (defn interpret-button []
   [:span.button-spacing [:input {:type "button" :value "Interpret" :on-click #(interpret-push)}]])
+
+(defn step-back-button []
+  [:span.button-spacing [:input {:type "button" :value "Previous Step" :on-click #(step-back)}]])
 
 (defn stop-button []
   [:span [:input {:type "button" :value "Pause" :on-click #(stop-interpret)}]])
@@ -667,20 +694,24 @@
   (for [items stack]
     (str items " ")))
 
+(defn drop-outers [s]
+  "drops parantheses from the string output"
+  (drop 1 (drop-last s)))
+
 (defn esp [stacks]
-  [:div [:p "Exec Stack: " (divvy-stack (:exec stacks))]])
+  [:div [:p "Exec Stack: " (drop-outers (str (:exec stacks)))]])
 
 (defn isp [stacks]
-  [:div [:p "Integer Stack: " (divvy-stack (:integer stacks))]])
+  [:div [:p "Integer Stack: " (drop-outers (str (:integer stacks)))]])
 
 (defn ssp [stacks]
-  [:div [:p "String Stack: " (divvy-stack (:string stacks))]])
+  [:div [:p "String Stack: " (drop-outers (str (:string stacks)))]])
 
 (defn bsp [stacks]
-  [:div [:p "Boolean Stack: " (divvy-stack (:boolean stacks))]])
+  [:div [:p "Boolean Stack: " (drop-outers (str (:boolean stacks)))]])
 
 (defn insp [stacks]
-  [:div [:p "Input Stack: " (divvy-stack (:input stacks))]])
+  [:div [:p "Input Stack: " (drop-outers (str (:input stacks)))]])
 
 
 (defn output-component []
@@ -697,11 +728,12 @@
 (defn home-page []
   [:div.app [:div.main [:div.title "Push Interpreter"]
              [int-text]
-             [:div.bottom-spacing  "Current Step: " (if (< 100000 (int @current-step)) [:span.error "Error"] @current-step) ". Step-limit: "
-              [:input {:type      "number" :value @step-limit
+             [:div.bottom-spacing "Current Step: " (if (true? @error-exists) [:span.error "Error"] @current-step) ". Step-limit: "
+              [:input {:type      "number" :value @step-limit :max 100000
                        :on-change #(reset! step-limit (-> % .-target .-value))}]]
              [load-button]
              [interpret-one-step-button]
+             [step-back-button]
              [interpret-button]
              [stop-button]
              [:p.error (str @error-output)]
