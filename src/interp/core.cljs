@@ -11,7 +11,8 @@
    [interp.utils :as utils]
    [interp.state :as state]
    [interp.instructions]
-   [propeller.push.interpreter :as pinterpreter]))
+   [propeller.push.interpreter :as pinterpreter]
+   [propeller.push.state :as pstate]))
 
 (def step-limit (r/atom 100))
 
@@ -49,6 +50,8 @@
 (def push-code (r/atom "(:exec_dup (1 2 :integer_add) \"hello\" (:integer_yank 5 6) :integer_gte :exec_if (5 6) false :integer_add)"))
 
 (def anFrame (r/atom {}))
+
+(def push-state-history (r/atom {}))
 
 (defn abs
   "Returns the absolute value of a number."
@@ -649,8 +652,6 @@
 
 (def output-stacks (r/atom "Test Output"))
 
-
-
 (defn load-state [push-code]
   (let [push-code
         (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
@@ -664,6 +665,18 @@
                   :boolean '()}]
       (reset! push-state stacks)
       (reset! cache (vec (hash-map @push-state))))))
+
+(defn load-state-history [push-code]
+  (let [push-code
+        (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
+              :else push-code)]
+    (reset! current-step 0)
+    (reset! error-exists false)
+    (reset! error-output "")
+    (reset! push-state-history 
+            (pinterpreter/interpret-program push-code 
+                                    (assoc pstate/empty-state :keep-history true) 
+                                    @step-limit))))
 
 (defn step-back []
   (cond (> 1 @current-step) ()
