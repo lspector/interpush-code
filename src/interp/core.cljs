@@ -3,13 +3,15 @@
                                           generate-instructions
                                           def-instruction]])
   (:require
-    [reagent.core :as r]
-    [reagent.dom :as d]
-    [cljs.tools.reader :refer [read-string]]
-    [cljs.js :as cljs-js]
-    [interp.globals :as globals]
-    [interp.utils :as utils]
-    [interp.state :as state]))
+   [reagent.core :as r]
+   [reagent.dom :as d]
+   [cljs.tools.reader :refer [read-string]]
+   [cljs.js :as cljs-js]
+   [interp.globals :as globals]
+   [interp.utils :as utils]
+   [interp.state :as state]
+   [interp.instructions]
+   [propeller.push.interpreter :as pinterpreter]))
 
 (def step-limit (r/atom 100))
 
