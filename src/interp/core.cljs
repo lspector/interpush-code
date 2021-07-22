@@ -701,13 +701,12 @@
                                     @step-limit)))))
 
 (defn step-back []
-  (cond (> 1 @current-step) ()
-        (= 1 @current-step) (load-state (read-string (str "(" @push-code ")))))))")))
-        :else (do
-                (reset! error-exists false)
-                (reset! error-output "")
-                (swap! current-step dec)
-                (reset! push-state (nth @cache (- (int @current-step) 1))))))
+  (if (> 1 @current-step)
+    ()
+    (do
+      (reset! error-exists false)
+      (reset! error-output "")
+      (swap! current-step dec))))
 
 (defn load-button []
   ;; [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string (str "(" @push-code ")))))))")))}]])
