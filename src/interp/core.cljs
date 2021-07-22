@@ -648,7 +648,9 @@
 ;;           (nth-state state-history @current-step)))
 
 (defn interpret-one-step []
-  (swap! current-step inc))
+  (if (= (count @push-state-history) (inc @current-step))
+    ()
+    (swap! current-step inc)))
 
 ;; cut
 (defn interpret-push []
