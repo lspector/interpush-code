@@ -51,7 +51,7 @@
 
 (def anFrame (r/atom {}))
 
-(def push-state-history (r/atom [nil]))
+(def push-state-history (r/atom []))
 
 (defn abs
   "Returns the absolute value of a number."
@@ -597,69 +597,25 @@
 ;;;;;;;;;
 ;; Interpreter
 
-;; (defn interpret-one-step
-;;   "Takes a Push state and executes the next instruction on the exec stack."
-;;   [state]
-;;   (let [popped-state (pop-stack state :exec)
-;;         first-instruction-raw (first (:exec state))
-;;         first-instruction (cond
-;;                             (nil? first-instruction-raw) nil
-;;                             (keyword? first-instruction-raw) (first-instruction-raw @globals/instruction-table)
-;;                             :else first-instruction-raw)]
-;;     (println (type first-instruction) first-instruction)
-;;     (cond
-;;       (empty? (:exec state))
-;;       (swap! current-step dec)
-;;       ;
-;;       (fn? first-instruction)
-;;       (reset! push-state (first-instruction popped-state))
-;;       ;
-;;       (number? first-instruction)
-;;       (reset! push-state (push-to-stack popped-state :integer (int first-instruction)))
-;;       ;
-;;       (integer? first-instruction)
-;;       (reset! push-state (push-to-stack popped-state :integer first-instruction))
-;;       ;
-;;       (string? first-instruction)
-;;       (reset! push-state (push-to-stack popped-state :string first-instruction))
-;;       ;
-;;       (seq? first-instruction)
-;;       (reset! push-state (update popped-state :exec #(concat %2 %1) first-instruction))
-;;       ;
-;;       (or (= first-instruction true) (= first-instruction false))
-;;       (reset! push-state (push-to-stack popped-state :boolean first-instruction))
-;;       ;
-;;       :else
-;;       ; (throw (Exception.
-;;       (do (reset! error-output (str "Unrecognized Push instruction in program: "
-;;                                     first-instruction-raw))
-;;           (input-error))))
-;;   (swap! current-step inc)
-;;   (if (< (count @cache) (int @current-step)) (swap! cache conj @push-state)))
-
-;; (defn nth-state
-;;   [state-history index]
-;;   (nth (:history state-history) index))
-
-;; (defn interpret-one-step 
-;;   [state-history]
-;;   (swap! current-step inc)
-;;   (reset! push-state 
-;;           (nth-state state-history @current-step)))
-
 (defn interpret-one-step []
   (if (= (count @push-state-history) (inc @current-step))
     ()
     (swap! current-step inc)))
 
 ;; cut
+;; (defn interpret-push []
+;;   (let [sl (int @step-limit)
+;;         state @push-state]
+;;     (if (or (<= sl (int @current-step)) (empty? (:exec state)) (true? @error-exists))
+;;       ()
+;;       (do (interpret-one-step)
+;;           (reset! anFrame (.requestAnimationFrame js/window interpret-push))))))
+
 (defn interpret-push []
-  (let [sl (int @step-limit)
-        state @push-state]
-    (if (or (<= sl (int @current-step)) (empty? (:exec state)) (true? @error-exists))
-      ()
-      (do (interpret-one-step)
-          (reset! anFrame (.requestAnimationFrame js/window interpret-push))))))
+  (if (zero? (count @push-state-history))
+    ()
+    (reset! current-step
+          (dec (:step (last @push-state-history))))))
 
 ;; possibly cut
 (defn stop-interpret []
@@ -673,24 +629,8 @@
   (let [final-state (dissoc state-history :history)]
     (conj (:history state-history) final-state)))
 
-;; cut
-(defn load-state 
+(defn load-state-history 
   [push-code]
-  (let [push-code
-        (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
-              :else push-code)]
-    (reset! current-step 0)
-    (reset! error-exists false)
-    (reset! error-output "")
-    (let [stacks {:exec    (list push-code)
-                  :integer '()
-                  :string  '()
-                  :boolean '()}]
-      (reset! push-state stacks)
-      (reset! cache (vec (hash-map @push-state))))))
-
-
-(defn load-state-history [push-code]
   (let [push-code
         (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
               :else push-code)]
@@ -757,7 +697,9 @@
 
 (defn output-component []
   (let [state
-        (nth @push-state-history @current-step)]
+        (if (empty? @push-state-history)
+          nil
+          (nth @push-state-history @current-step))]
     [:div.outputbox
      [:div (esp state)]
      [:div (isp state)]
