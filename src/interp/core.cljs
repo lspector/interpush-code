@@ -597,62 +597,78 @@
 ;;;;;;;;;
 ;; Interpreter
 
-(defn interpret-one-step
-  "Takes a Push state and executes the next instruction on the exec stack."
-  [state]
-  (let [popped-state (pop-stack state :exec)
-        first-instruction-raw (first (:exec state))
-        first-instruction (cond
-                            (nil? first-instruction-raw) nil
-                            (keyword? first-instruction-raw) (first-instruction-raw @globals/instruction-table)
-                            :else first-instruction-raw)]
-    (println (type first-instruction) first-instruction)
-    (cond
-      (empty? (:exec state))
-      (swap! current-step dec)
-      ;
-      (fn? first-instruction)
-      (reset! push-state (first-instruction popped-state))
-      ;
-      (number? first-instruction)
-      (reset! push-state (push-to-stack popped-state :integer (int first-instruction)))
-      ;
-      (integer? first-instruction)
-      (reset! push-state (push-to-stack popped-state :integer first-instruction))
-      ;
-      (string? first-instruction)
-      (reset! push-state (push-to-stack popped-state :string first-instruction))
-      ;
-      (seq? first-instruction)
-      (reset! push-state (update popped-state :exec #(concat %2 %1) first-instruction))
-      ;
-      (or (= first-instruction true) (= first-instruction false))
-      (reset! push-state (push-to-stack popped-state :boolean first-instruction))
-      ;
-      :else
-      ; (throw (Exception.
-      (do (reset! error-output (str "Unrecognized Push instruction in program: "
-                                    first-instruction-raw))
-          (input-error))))
-  (swap! current-step inc)
-  (if (< (count @cache) (int @current-step)) (swap! cache conj @push-state)))
+;; (defn interpret-one-step
+;;   "Takes a Push state and executes the next instruction on the exec stack."
+;;   [state]
+;;   (let [popped-state (pop-stack state :exec)
+;;         first-instruction-raw (first (:exec state))
+;;         first-instruction (cond
+;;                             (nil? first-instruction-raw) nil
+;;                             (keyword? first-instruction-raw) (first-instruction-raw @globals/instruction-table)
+;;                             :else first-instruction-raw)]
+;;     (println (type first-instruction) first-instruction)
+;;     (cond
+;;       (empty? (:exec state))
+;;       (swap! current-step dec)
+;;       ;
+;;       (fn? first-instruction)
+;;       (reset! push-state (first-instruction popped-state))
+;;       ;
+;;       (number? first-instruction)
+;;       (reset! push-state (push-to-stack popped-state :integer (int first-instruction)))
+;;       ;
+;;       (integer? first-instruction)
+;;       (reset! push-state (push-to-stack popped-state :integer first-instruction))
+;;       ;
+;;       (string? first-instruction)
+;;       (reset! push-state (push-to-stack popped-state :string first-instruction))
+;;       ;
+;;       (seq? first-instruction)
+;;       (reset! push-state (update popped-state :exec #(concat %2 %1) first-instruction))
+;;       ;
+;;       (or (= first-instruction true) (= first-instruction false))
+;;       (reset! push-state (push-to-stack popped-state :boolean first-instruction))
+;;       ;
+;;       :else
+;;       ; (throw (Exception.
+;;       (do (reset! error-output (str "Unrecognized Push instruction in program: "
+;;                                     first-instruction-raw))
+;;           (input-error))))
+;;   (swap! current-step inc)
+;;   (if (< (count @cache) (int @current-step)) (swap! cache conj @push-state)))
 
+(defn nth-state
+  [state-history index]
+  (nth (:history state-history) index))
 
+;; (defn interpret-one-step 
+;;   [state-history]
+;;   (swap! current-step inc)
+;;   (reset! push-state 
+;;           (nth-state state-history @current-step)))
 
+(defn interpret-one-step []
+  (swap! current-step inc))
+
+;; cut
 (defn interpret-push []
   (let [sl (int @step-limit)
         state @push-state]
     (if (or (<= sl (int @current-step)) (empty? (:exec state)) (true? @error-exists))
       ()
-      (do (interpret-one-step @push-state)
+      (do (interpret-one-step)
           (reset! anFrame (.requestAnimationFrame js/window interpret-push))))))
 
+;; possibly cut
 (defn stop-interpret []
   (.cancelAnimationFrame js/window @anFrame))
 
+;; cut
 (def output-stacks (r/atom "Test Output"))
 
-(defn load-state [push-code]
+;; cut
+(defn load-state 
+  [push-code]
   (let [push-code
         (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
               :else push-code)]
@@ -666,6 +682,7 @@
       (reset! push-state stacks)
       (reset! cache (vec (hash-map @push-state))))))
 
+
 (defn load-state-history [push-code]
   (let [push-code
         (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
@@ -676,7 +693,10 @@
     (reset! push-state-history 
             (pinterpreter/interpret-program push-code 
                                     (assoc pstate/empty-state :keep-history true) 
-                                    @step-limit))))
+                                    @step-limit))
+    ;; (reset! push-state
+    ;;         (first (:history @push-state-history)))
+            ))
 
 (defn step-back []
   (cond (> 1 @current-step) ()
@@ -688,10 +708,13 @@
                 (reset! push-state (nth @cache (- (int @current-step) 1))))))
 
 (defn load-button []
-  [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string (str "(" @push-code ")))))))")))}]])
+  ;; [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-state (read-string (str "(" @push-code ")))))))")))}]])
+  [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-state-history (read-string @push-code))}]])
+
 
 (defn interpret-one-step-button []
-  [:span.button-spacing [:input {:type "button" :value  "Interpret One Step" :on-click #(interpret-one-step @push-state)}]])
+  ;; [:span.button-spacing [:input {:type "button" :value  "Interpret One Step" :on-click #(interpret-one-step @push-state-history)}]])
+  [:span.button-spacing [:input {:type "button" :value  "Interpret One Step" :on-click #(interpret-one-step)}]])
 
 (defn interpret-button []
   [:span.button-spacing [:input {:type "button" :value "Interpret" :on-click #(interpret-push)}]])
@@ -730,11 +753,13 @@
 
 
 (defn output-component []
-  [:div.outputbox
-   [:div (esp @push-state)]
-   [:div (isp @push-state)]
-   [:div (ssp @push-state)]
-   [:div (bsp @push-state)]])
+  (let [state
+        (nth-state @push-state-history @current-step)]
+    [:div.outputbox
+     [:div (esp state)]
+     [:div (isp state)]
+     [:div (ssp state)]
+     [:div (bsp state)]]))
 
 
 ;; -------------------------
