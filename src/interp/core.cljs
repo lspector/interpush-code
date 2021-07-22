@@ -51,7 +51,7 @@
 
 (def anFrame (r/atom {}))
 
-(def push-state-history (r/atom {}))
+(def push-state-history (r/atom [nil]))
 
 (defn abs
   "Returns the absolute value of a number."
@@ -637,9 +637,9 @@
 ;;   (swap! current-step inc)
 ;;   (if (< (count @cache) (int @current-step)) (swap! cache conj @push-state)))
 
-(defn nth-state
-  [state-history index]
-  (nth (:history state-history) index))
+;; (defn nth-state
+;;   [state-history index]
+;;   (nth (:history state-history) index))
 
 ;; (defn interpret-one-step 
 ;;   [state-history]
@@ -666,6 +666,11 @@
 ;; cut
 (def output-stacks (r/atom "Test Output"))
 
+(defn add-final-state
+  [state-history]
+  (let [final-state (dissoc state-history :history)]
+    (conj (:history state-history) final-state)))
+
 ;; cut
 (defn load-state 
   [push-code]
@@ -691,12 +696,9 @@
     (reset! error-exists false)
     (reset! error-output "")
     (reset! push-state-history 
-            (pinterpreter/interpret-program push-code 
+            (add-final-state (pinterpreter/interpret-program push-code 
                                     (assoc pstate/empty-state :keep-history true) 
-                                    @step-limit))
-    ;; (reset! push-state
-    ;;         (first (:history @push-state-history)))
-            ))
+                                    @step-limit)))))
 
 (defn step-back []
   (cond (> 1 @current-step) ()
@@ -754,7 +756,7 @@
 
 (defn output-component []
   (let [state
-        (nth-state @push-state-history @current-step)]
+        (nth @push-state-history @current-step)]
     [:div.outputbox
      [:div (esp state)]
      [:div (isp state)]
@@ -791,3 +793,5 @@
 
 (defn init! []
   (mount-root))
+
+(def hello-world "hello world")
