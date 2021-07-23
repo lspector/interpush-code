@@ -12,24 +12,16 @@
    [interp.state :as state]
    [interp.instructions]
    [propeller.push.interpreter :as pinterpreter]
-   [propeller.push.state :as pstate]))
+   [propeller.push.state :as pstate]
+   [propeller.push.core :as pcore]
+   [propeller.push.utils.helpers :as phelpers]
+   [clojure.set]))
 
 (def step-limit (r/atom 100))
 
 (def current-step (r/atom 0))
 
 (def error-exists (r/atom false))
-
-(def cache (r/atom [{:exec    '()
-                     :integer '()
-                     :string  '()
-                     :boolean '()}]))
-
-(def blank-state
-  {:exec    '()
-   :integer '()
-   :string  '()
-   :boolean '()})
 
 (def error-output (r/atom ""))
 
@@ -597,19 +589,23 @@
 ;;;;;;;;;
 ;; Interpreter
 
+(defn valid-program?
+  [push-code]
+  (clojure.set/subset? 
+   (set (filter keyword? (flatten push-code)))
+   (set (phelpers/get-stack-instructions #{:exec :integer :string :boolean}))))
+
+(defn invalid-instruction
+  [push-code]
+  (vec (clojure.set/difference
+   (set (filter keyword? (flatten push-code)))
+   (set (phelpers/get-stack-instructions #{:exec :integer :string :boolean})))))
+
 (defn interpret-one-step []
-  (if (= (count @push-state-history) (inc @current-step))
+  (if (or (= (count @push-state-history) (inc @current-step)) 
+          (zero? (count @push-state-history)))
     ()
     (swap! current-step inc)))
-
-;; cut
-;; (defn interpret-push []
-;;   (let [sl (int @step-limit)
-;;         state @push-state]
-;;     (if (or (<= sl (int @current-step)) (empty? (:exec state)) (true? @error-exists))
-;;       ()
-;;       (do (interpret-one-step)
-;;           (reset! anFrame (.requestAnimationFrame js/window interpret-push))))))
 
 (defn interpret-push []
   (if (zero? (count @push-state-history))
@@ -621,9 +617,6 @@
 (defn stop-interpret []
   (.cancelAnimationFrame js/window @anFrame))
 
-;; cut
-(def output-stacks (r/atom "Test Output"))
-
 (defn add-final-state
   [state-history]
   (let [final-state (dissoc state-history :history)]
@@ -634,13 +627,21 @@
   (let [push-code
         (cond (and (= (count push-code) 1) (list? (first push-code))) (first push-code)
               :else push-code)]
-    (reset! current-step 0)
-    (reset! error-exists false)
-    (reset! error-output "")
-    (reset! push-state-history 
-            (add-final-state (pinterpreter/interpret-program push-code 
-                                    (assoc pstate/empty-state :keep-history true) 
-                                    @step-limit)))))
+    (try 
+      (if (valid-program? push-code)
+      (do
+        (reset! push-state-history
+                (add-final-state (pinterpreter/interpret-program push-code
+                                                                 (assoc pstate/empty-state :keep-history true)
+                                                                 @step-limit)))
+        (reset! current-step 0)
+        (reset! error-exists false)
+        (reset! error-output ""))
+      (do (reset! error-output (str "Unrecognized Push instruction in program: " (invalid-instruction push-code)))
+          (input-error)))
+      (catch js/Error. e
+        (reset! error-output (str e))
+        (input-error)))))
 
 (defn step-back []
   (if (> 1 @current-step)
@@ -724,7 +725,7 @@
              [:p.error (str @error-output)]
              [output-component]]
    [:div.instruction-list [:p "Instruction List:"]
-    [:div.instructions (str (keys @globals/instruction-table))]]]
+    [:div.instructions (str (phelpers/get-stack-instructions #{:exec :integer :string :boolean}))]]]
 
   )
 
