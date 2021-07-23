@@ -34,3 +34,27 @@
     (if (fn? instruction)
       (instruction)
       instruction)))
+
+(defn balanced? 
+  "Code found on:
+   https://commandercoriander.net/blog/2015/01/17/testing-for-balanced-brackets-in-clojure/"
+  [s]
+  (->> s
+        ;; remove non-bracket characters
+       (filter #{\[ \] \( \) \{ \}})
+
+        ;; reduce down to an empty or non-empty vector
+       (reduce
+        (fn [stack item]
+          (cond
+            (#{\( \{ \[} item) (conj stack item)
+
+            (and (#{\( \{ \[} (last stack))
+                 (= ({\) \(, \} \{, \] \[} item) (last stack)))
+            (pop stack)
+
+            :else (conj stack item)))
+        [])
+
+        ;; return whether we have any unbalanced brackets
+       empty?))
