@@ -10,7 +10,11 @@
    [propeller.push.state :as pstate]
    [propeller.push.core :as pcore]
    [propeller.push.utils.helpers :as phelpers]
-   [clojure.set]))
+   [clojure.set]
+   [propeller.problems.simple-regression :as regression]
+   [propeller.gp :as gp]
+   [propeller.genome :as genome]
+   [propeller.variation :as variation]))
 
 (def step-limit (r/atom 100))
 
@@ -22,7 +26,13 @@
 
 (def push-code (r/atom "(:exec_dup (1 2 :integer_add) \"hello\" (:integer_yank 5 6) :integer_gte :exec_if (5 6) false :integer_add)"))
 
+(def gp-info (r/atom ""))
+
 (def push-state-history (r/atom []))
+
+(def population (r/atom ()))
+
+(def generation (r/atom 0))
 
 (defn input-error []
   (reset! error-exists true))
@@ -100,6 +110,90 @@
       (reset! error-output "")
       (swap! current-step dec))))
 
+
+;; -------------------------
+;; GP
+
+
+(defn report
+  [pop generation argmap]
+  (println "//////////////////////////////////")
+  (println "I am being called!!! Whooooo!")
+  (println "//////////////////////////////////")
+  (let [best (first pop)
+        gen-info {:generation            generation
+                  :best-plushy           (:plushy best)
+                  :best-program          (genome/plushy->push (:plushy best) argmap)
+                  :best-total-error      (:total-error best)
+                  :best-errors           (:errors best)
+                  :best-behaviors        (:behaviors best)
+                  }]
+    (r/flush)
+    (reset! gp-info (str gen-info))
+    (println @gp-info)))
+
+(def regression-argmap
+  {:instructions            regression/instructions
+   :error-function          regression/error-function
+   :training-data           (:train regression/train-and-test-data)
+   :testing-data            (:test regression/train-and-test-data)
+   :max-generations         50
+   :population-size         500
+   :max-initial-plushy-size 100
+   :step-limit              200
+   :parent-selection        :lexicase
+   :tournament-size         5
+   :umad-rate               0.1
+   :variation               {:umad 0.5 :crossover 0.5}
+   :elitism                 false})
+
+(defn generate-pop
+  [population-size instructions max-initial-plushy-size]
+  (repeatedly
+   population-size
+   #(hash-map :plushy (genome/make-random-plushy
+                       instructions
+                       max-initial-plushy-size))))
+
+(defn next-gen-pop
+  [population-size evaluated-pop argmap]
+  (repeatedly population-size
+              #(variation/new-individual evaluated-pop argmap)))
+
+(def pop-arguments
+  [100 regression/instructions 50])
+
+(defn regression-gp
+  "Main GP loop."
+  [{:keys [population-size max-generations error-function instructions
+           max-initial-plushy-size]
+    :as   argmap}]
+  ;;
+  (when (zero? @generation)
+    (reset! population (generate-pop population-size instructions max-initial-plushy-size)))
+  (let [evaluated-pop (sort-by :total-error
+                               (map
+                                (partial error-function argmap (:training-data argmap))
+                                @population))
+        best-individual (first evaluated-pop)]
+    (if (:custom-report argmap)
+      ((:custom-report argmap) evaluated-pop @generation argmap)
+      (report evaluated-pop @generation argmap))
+    (cond
+        ;; Success on training cases is verified on testing cases
+      (zero? (:total-error best-individual))
+      (do (prn {:success-generation @generation})
+          (prn {:total-test-error
+                (:total-error (error-function argmap (:testing-data argmap) best-individual))}))
+        ;;
+      (>= @generation max-generations)
+      nil
+        ;;
+      :else
+      (do
+        (swap! generation inc)
+        (reset! population (next-gen-pop population-size evaluated-pop argmap))))))
+
 ;; -------------------------
 ;; Views
 
@@ -115,15 +209,22 @@
 (defn step-back-button []
   [:span.button-spacing [:input {:type "button" :value "Previous Step" :on-click #(step-back)}]])
 
+(defn regression-button []
+    [:span.button-spacing [:input {:type "button" :value "Next Generation" :on-click #(regression-gp regression-argmap)}]])
+
 (defn int-text []
   [:div [:textarea.textbox {:value @push-code :on-change #(reset! push-code (-> % .-target .-value))}]])
+
+(defn gp-text []
+  [:div @gp-info])
 
 (defn divvy-stack [stack]
   (for [items stack]
     (str items " ")))
 
-(defn drop-outers [s]
+(defn drop-outers 
   "drops parantheses from the string output"
+  [s]
   (drop 1 (drop-last s)))
 
 (defn esp [stacks]
@@ -153,7 +254,6 @@
      [:div (ssp state)]
      [:div (bsp state)]]))
 
-
 ;; -------------------------
 ;; Views
 
@@ -167,7 +267,9 @@
              [interpret-one-step-button]
              [step-back-button]
              [interpret-button]
+             [regression-button]
              [:p.error (str @error-output)]
+             [gp-text]
              [output-component]]
    [:div.instruction-list [:p "Instruction List:"]
     [:div.instructions (str (sort (phelpers/get-stack-instructions #{:exec :integer :string :boolean})))]]])
