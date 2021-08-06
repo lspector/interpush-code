@@ -10,7 +10,11 @@
    [propeller.push.state :as pstate]
    [propeller.push.core :as pcore]
    [propeller.push.utils.helpers :as phelpers]
-   [clojure.set]))
+   [clojure.set]
+   [propeller.problems.simple-regression :as regression]
+   [propeller.gp :as gp]
+   [propeller.genome :as genome]
+   [propeller.variation :as variation]))
 
 (def step-limit (r/atom 100))
 
@@ -22,7 +26,13 @@
 
 (def push-code (r/atom "(:exec_dup (1 2 :integer_add) \"hello\" (:integer_yank 5 6) :integer_gte :exec_if (5 6) false :integer_add)"))
 
+(def current-gen-info (r/atom ""))
+
 (def push-state-history (r/atom []))
+
+(def population (r/atom ()))
+
+(def generation (r/atom 0))
 
 (defn input-error []
   (reset! error-exists true))
@@ -100,8 +110,83 @@
       (reset! error-output "")
       (swap! current-step dec))))
 
+
 ;; -------------------------
-;; Views
+;; GP
+
+(def regression-argmap
+  {:instructions            regression/instructions
+   :error-function          regression/error-function
+   :training-data           (:train regression/train-and-test-data)
+   :testing-data            (:test regression/train-and-test-data)
+   :max-generations         50
+   :population-size         500
+   :max-initial-plushy-size 100
+   :step-limit              200
+   :parent-selection        :lexicase
+   :tournament-size         5
+   :umad-rate               0.1
+   :variation               {:umad 0.5 :crossover 0.5}
+   :elitism                 false})
+
+(defn report
+  [pop generation argmap]
+  (let [best (first pop)
+        gen-info {:generation            generation
+                  :best-plushy           (:plushy best)
+                  :best-program          (genome/plushy->push (:plushy best) argmap)
+                  :best-total-error      (:total-error best)
+                  :best-errors           (:errors best)
+                  :best-behaviors        (:behaviors best)
+                  }]
+    (reset! current-gen-info gen-info)))
+
+(defn generate-pop
+  [population-size instructions max-initial-plushy-size]
+  (repeatedly
+   population-size
+   #(hash-map :plushy (genome/make-random-plushy
+                       instructions
+                       max-initial-plushy-size))))
+
+(defn next-gen-pop
+  [population-size evaluated-pop argmap]
+  (repeatedly population-size
+              #(variation/new-individual evaluated-pop argmap)))
+
+
+(defn regression-gp
+  [{:keys [population-size max-generations error-function instructions
+           max-initial-plushy-size]
+    :as   argmap}]
+  ;;
+  (when (zero? @generation)
+    (reset! population (generate-pop population-size instructions max-initial-plushy-size)))
+  (let [evaluated-pop (sort-by :total-error
+                               (map
+                                (partial error-function argmap (:training-data argmap))
+                                @population))
+        best-individual (first evaluated-pop)]
+    (cond
+        ;; Success on training cases is verified on testing cases
+      (zero? (:total-error best-individual))
+      (do (prn {:success-generation @generation})
+          (prn {:total-test-error
+                (:total-error (error-function argmap (:testing-data argmap) best-individual))}))
+        ;;
+      (>= @generation max-generations)
+      nil
+        ;;
+      :else
+      (do
+        (swap! generation inc)
+        (reset! population (next-gen-pop population-size evaluated-pop argmap))))
+    (if (:custom-report argmap)
+      ((:custom-report argmap) evaluated-pop @generation argmap)
+      (report evaluated-pop @generation argmap))))
+
+;; -------------------------
+;; Buttons and Components
 
 (defn load-button []
   [:span.left-spacing.button-spacing [:input {:type "button" :value "Load Push Code" :on-click #(load-code @push-code)}]])
@@ -118,13 +203,20 @@
 (defn int-text []
   [:div [:textarea.textbox {:value @push-code :on-change #(reset! push-code (-> % .-target .-value))}]])
 
+(defn next-gen-button []
+  [:span.button-spacing [:input {:type "button" :value "Next Generation" :on-click #(regression-gp regression-argmap)}]])
+
 (defn divvy-stack [stack]
   (for [items stack]
     (str items " ")))
 
-(defn drop-outers [s]
+(defn drop-outers 
   "drops parantheses from the string output"
+  [s]
   (drop 1 (drop-last s)))
+
+;; -------------------------
+;; Push Output
 
 (defn esp [stacks]
   [:div [:p "Exec Stack: " (drop-outers (str (:exec stacks)))]])
@@ -141,8 +233,23 @@
 (defn insp [stacks]
   [:div [:p "Input Stack: " (drop-outers (str (:input stacks)))]])
 
+;; -------------------------
+;; GP Output
 
-(defn output-component []
+(defn gen-out [gen-info]
+  [:div [:p "Generation:  " (str (:generation gen-info))]])
+
+(defn program-out [gen-info]
+  [:div [:p "Best push program:  " (str (:best-program gen-info))]])
+
+(defn total-error-out [gen-info]
+  [:div [:p "Best total error:  " (str (:best-total-error gen-info))]])
+
+(defn errors-out [gen-info]
+  [:div [:p "Best errors:  "(drop-outers (str (:best-errors gen-info)))]])
+
+
+(defn push-output-component []
   (let [state
         (if (empty? @push-state-history)
           nil
@@ -153,12 +260,20 @@
      [:div (ssp state)]
      [:div (bsp state)]]))
 
+(defn gp-output-component []
+  [:div.outputbox
+   [:div (gen-out @current-gen-info)]
+   [:div (program-out @current-gen-info)]
+   [:div (total-error-out @current-gen-info)]
+   [:div (errors-out @current-gen-info)]])
 
 ;; -------------------------
 ;; Views
 
 (defn home-page []
-  [:div.app [:div.main [:div.title "Push Interpreter"]
+  [:div.app [:div.main
+             [:div.title "Interpush"]
+             [:div.h1 "Push Interpreter"]
              [int-text]
              [:div.bottom-spacing "Current Step: " (if (true? @error-exists) [:span.error "Error"] @current-step) ". Step-limit: "
               [:input {:type      "number" :value @step-limit :max 100000
@@ -168,8 +283,11 @@
              [step-back-button]
              [interpret-button]
              [:p.error (str @error-output)]
-             [output-component]]
-   [:div.instruction-list [:p "Instruction List:"]
+             [push-output-component]
+             [:div.h1 "Genetic Programming: Simple Regression"]
+             [next-gen-button]
+             [gp-output-component]]
+   [:div.instruction-list [:p "Push Instruction List:"]
     [:div.instructions (str (sort (phelpers/get-stack-instructions #{:exec :integer :string :boolean})))]]])
 
 ;; -------------------------
